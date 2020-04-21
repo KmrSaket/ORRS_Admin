@@ -45,7 +45,7 @@
 					elseif($pwdCheck == true){
 						session_start();							//session started on successfull login
 						$_SESSION['adminSession']=$row['admin_name'];	//session variable for user_name created
-						header("Location: ../dashboard.php?login=success");
+						header("Location: ../dashboard.php");
 						exit();
 					}
 					else{

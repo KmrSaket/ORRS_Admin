@@ -7,7 +7,7 @@ $(document).ready(function() {
   //     $("#loginErrorModal").modal();
   //   }
   // });
-  
+
   const queryString=window.location.search;
   const urlParams= new URLSearchParams(queryString);
   const errormsg=urlParams.get('error');
@@ -25,6 +25,10 @@ $(document).ready(function() {
   }
   else if (errormsg=="invalidadmin") {
     document.getElementById("errormsg").innerHTML="Admin does not exist!";
+    $("#loginErrorModal").modal();
+  }
+  else if (errormsg=="logged_out") {
+    document.getElementById("errormsg").innerHTML="Logged Out Successfully!";
     $("#loginErrorModal").modal();
   }
 
