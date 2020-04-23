@@ -1,3 +1,6 @@
+/* for hoverable drop down menu (start)*/
+
+
 /* Dropdown Button */
 .dropbtn {
   background-color: #343a40;
@@ -42,12 +45,18 @@
 .dropdown:hover .dropbtn {background-color: #c1c1c1;}
 
 
+/* for hoverable drop down menu (end)*/
+
+
+
+
+
 
 
 
 
 /* Nav button */
-.hh {
+.nav_btn {
   background-color: #343a40;
   color: white;
   padding: 16px;
@@ -56,4 +65,4 @@
 }
 
 /* Nav button on hover */
-.hh:hover {background-color: #c1c1c1;}
+.nav_btn:hover {background-color: #c1c1c1;}
