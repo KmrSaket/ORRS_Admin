@@ -33,9 +33,14 @@
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 						<li class="nav-item mr-5">
-							<button class="dropbtn" id="dropdownMenu0" disabled style="background-color:#c1c1c1;">About</button>
+							<button class="hh" id="dropdownMenu0"  style="background-color:#c1c1c1;">About</button>
 						</li>
-						<li class="nav-item mr-5">
+
+						<li>
+							<a href="users.php"><button class="hh" id="dropdownMenu1">Users</button></a>
+						</li>
+
+						<!-- <li class="nav-item mr-5">
 							<div class="dropdown">
 			        	<button class="dropbtn" id="dropdownMenu1" href="#">Users</button>
 								<div class="dropdown-content">
@@ -44,9 +49,9 @@
 										<a href="admin_functionality/users/link3.php" style="color:black; text-decoration:none;">Link 3</a>
 									</div>
 								</div>
-			      </li>
+			      </li> -->
 
-						<li class="nav-item mr-5">
+						<!-- <li class="nav-item mr-5">
 							<div class="dropdown">
 			        	<button class="dropbtn" id="dropdownMenu2" href="#">Trains</button>
 								<div class="dropdown-content">
@@ -55,8 +60,9 @@
 										<a href="admin_functionality/trains/link3.php" style="color:black; text-decoration:none;">Link 3</a>
 									</div>
 								</div>
-			      </li>
-						<li class="nav-item mr-5">
+			      </li> -->
+
+						<!-- <li class="nav-item mr-5">
 							<div class="dropdown">
 			        	<button class="dropbtn" id="dropdownMenu3" href="#">Fare</button>
 								<div class="dropdown-content">
@@ -65,7 +71,7 @@
 										<a href="admin_functionality/fare/link3.php" style="color:black; text-decoration:none;">Link 3</a>
 									</div>
 								</div>
-			      </li>
+			      </li> -->
 			    </ul>
 			      <a class="btn btn-outline-danger my-2 my-sm-0" type="button" name="logout" id="logoutbtn" href="includes/admin_logout_inc.php">Logout</a>
 			  </div>

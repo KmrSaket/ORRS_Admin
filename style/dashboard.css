@@ -40,3 +40,20 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #c1c1c1;}
+
+
+
+
+
+
+/* Nav button */
+.hh {
+  background-color: #343a40;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* Nav button on hover */
+.hh:hover {background-color: #c1c1c1;}
