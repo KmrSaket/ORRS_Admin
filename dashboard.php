@@ -45,19 +45,19 @@
 						<!-- dummy navs starts-->
 
 						<li>
-							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">Users</button></a>
+							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
 						</li>
 						<li>
-							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">Users</button></a>
+							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
 						</li>
 						<li>
-							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">Users</button></a>
+							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
 						</li>
 						<li>
-							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">Users</button></a>
+							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
 						</li>
 						<li>
-							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">Users</button></a>
+							<a href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
 						</li>
 
 						<!-- dummy navs ends-->
