@@ -19,17 +19,10 @@
   				while ($result=mysqli_fetch_array($query)) {
             ?>
 
-							<tr>
+							<tr class="rowSelect">
 									<td> <?php echo $result['user_id']; ?> </td>
 									<td> <?php echo $result['user_name']; ?> </td>
 									<td> <?php echo $result['email']; ?> </td>
-									<td class="dropdown"> <button class="dropbtn btnSelect" >action</button>
-										 <div class="dropdown-content">
-											<a href="#" class=" btnSelect" style="text-decoration: none;">Update</a>
-											<a href="#">Link 2</a>
-											<a href="#">Link 3</a>
-										</div>
-									</td>
 							</tr>
 
 						<?php
