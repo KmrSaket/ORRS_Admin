@@ -20,9 +20,12 @@
             ?>
 
 							<tr class="rowSelect">
-									<td> <?php echo $result['user_id']; ?> </td>
+
 									<td> <?php echo $result['user_name']; ?> </td>
 									<td> <?php echo $result['email']; ?> </td>
+									<td> <?php echo $result['fname']; ?> </td>
+									<td> <?php echo $result['lname']; ?> </td>
+									<td> <?php echo $result['phone']; ?> </td>
 							</tr>
 
 						<?php

@@ -1,11 +1,12 @@
 $('document').ready(function() {
 
     $.ajax({
-      url: 'includes/users_inc.php',
+      url: 'http://localhost/ORRS_Admin/includes/users_inc.php',
       type: 'post',
 
       success:function(responsedata) {
-        $('#response').html(responsedata);
+        //alert(this.url);
+       $('#response').html(responsedata);
       }
     });
 
@@ -15,15 +16,20 @@ $('document').ready(function() {
          // get the current row
          var currentRow=$(this).closest("tr");
 
-         var col1=currentRow.find("td:eq(0)").text().trim(); // get current row 1st TD value
-         var col2=currentRow.find("td:eq(1)").text().trim(); // get current row 2nd TD
-         var col3=currentRow.find("td:eq(2)").text().trim(); // get current row 3rd TD
-        
+         var un=currentRow.find("td:eq(0)").text().trim();
+         var ph=currentRow.find("td:eq(4)").text().trim(); // get current row 1st TD value
+         // var col2=currentRow.find("td:eq(1)").text().trim(); // get current row 2nd TD
+         // var col3=currentRow.find("td:eq(2)").text().trim(); // get current row 3rd TD
+
 
          // launch modal
-         document.getElementById("uid").value=col1;
-         document.getElementById("uname").value=col2;
-         document.getElementById("email").value=col3;
+         document.getElementById("uname").value=un;
+         $('#phone').attr('placeholder', ph);
+
+
+
+
+
          $("#userModal").modal();
     });
 
