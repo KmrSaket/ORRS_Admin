@@ -1,0 +1,9 @@
+.col-4{
+  text-align: left !important;
+}
+#passwordConfirm::-webkit-input-placeholder, #password::-webkit-input-placeholder{
+  font-size: 12px;
+}
+.form_buttons{
+  width: 100%;
+}

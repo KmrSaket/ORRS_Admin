@@ -1,6 +1,6 @@
 <?php
 
-		include_once ('dbh_inc.php') ;		//includes database connection file
+		include_once ('../dbh_inc.php') ;		//includes database connection file
 
 
 		$sql = "SELECT * FROM passenger ";
@@ -8,7 +8,14 @@
 
 			//check if sql connection is created
 			if(!mysqli_stmt_prepare($stmt,$sql)){
-				header("Location: ../index.php?error=sqlerror");
+				?>
+				<tr class="table-danger">
+					<td colspan="5">
+						<h5> An Error occured while connecting to database!</h5>
+					</td>
+				</tr>
+
+				<?php
 				exit();
 			}
 			else{

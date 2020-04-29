@@ -54,6 +54,7 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 	</style> -->
+	<link rel="stylesheet" href="style\users.css">
 	<style>
 		tr{
 			cursor: pointer;
@@ -144,6 +145,8 @@
 		<!-- list of all users (table ends) -->
 
 
+
+
 		<!-- modal start -->
 
 		<div id="userModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -152,47 +155,47 @@
 						<div class="modal-header">
 		        	<h5 class="modal-title">
 										<input id="uname" disabled style="background-color:white; border:none;"></h5>
-
-
 		      	</div>
-
-
-						<form class="form">
+						<br>
+						<form class="form needs-validation" novalidate>
 							<div class="form-group ">
 								<div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
 										<label for="phone">Phone Number</label>
 									</div>
 									<div class="col-4">
-										<input id="phone" class="form-control"><br>
+										<input id="phone" class="form-control">
 									</div>
 								</div>
+								<br>
 								<div class="row align-items-start">
-									<div class="col-4 justify-content-start">
-										<label for="password"> Change Password</label>
+									<div class="col-4 justify-content-start" >
+										<label for="password" > Change Password</label>
 									</div>
 									<div class="col-4">
-										<input id="password" type="password" placeholder="Enter New Password" class="form-control md-6"><br>
+										<input id="password" type="password" placeholder="Enter New Password" class="form-control md-6">
 									</div>
 								</div>
+								<br>
 								<div class="row align-items-start">
 									<div class="col-4 justify-content-start">
 										<label for="password"> Confirm Password</label>
 									</div>
 									<div class="col-4">
-										<input id="password" type="password" placeholder="Re-Enter New Password" class="form-control md-6"><br>
+										<input id="passwordConfirm" type="password" placeholder="Re-Enter Password" class="form-control md-6">
 									</div>
 								</div>
 							</div>
+							<br>
 							<div class="row row-cols-3">
 								<div class="col-4">
-									<button class="btn btn-primary">Update Profile</button>
+									<button class="btn btn-primary form_buttons" id="update" >Update Profile</button>
 								</div>
 								<div class="col-4">
-									<button class="btn btn-danger">Delete Profile</button>
+									<button class="btn btn-danger form_buttons" id="delete">Delete Profile</button>
 								</div>
 								<div class="col-4">
-									<button class="btn btn-secondary"> History</button>
+									<button class="btn btn-secondary form_buttons" id="history"> History</button>
 								</div>
 							</div>
 
@@ -201,6 +204,9 @@
 					</div>
 				</div>
 			</div>
+
+
+			<!-- modal ends -->
 
 
 
