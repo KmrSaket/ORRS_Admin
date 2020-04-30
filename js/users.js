@@ -14,30 +14,22 @@ $('document').ready(function() {
 
     //ajax call for Update
     $('#update').click(function(){
-      $.ajax({
-        url: 'includes/users/user_update',
-        type:'post',
-        success:function(responsedata_update) {
-          alert("done");
-        },
-        error:function(responsedata_update){
-          alert("fail");
-        }
-      });
+      $.post( "includes/users/user_update.php" ,
+            { uname: $('#uname').val(), psw: $('#password').val() , phone: $('#phone').val() } ,
+            function(data) {
+              console.log(data);
+            }
+          );
     });
 
     //ajax call for Update
     $('#delete').click(function(){
-      $.ajax({
-        url: 'includes/users/user_delete',
-        type:'post',
-        success:function(responsedata_update) {
-          alert("done");
-        },
-        error:function(responsedata_update){
-          alert("fail");
-        }
-      });
+      $.post( "includes/users/user_delete.php" ,
+            { uname: $('#uname').val()} ,
+            function(data) {
+              console.log(data);
+            }
+          );
     });
 
     // code to read selected table row cell data (values).
