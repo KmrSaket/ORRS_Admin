@@ -38,13 +38,13 @@
 						<li class="nav-item">
 							<a class="nav-link" href="users.php"><button class="nav_btn" > Users</button></a>
 						</li>
-
+						<li class="nav-item">
+							<a class="nav-link" href="trains.php"><button class="nav_btn" >Trains	</button></a>
+						</li>
 
 						<!-- dummy navs starts-->
 
-						<li class="nav-item">
-							<a class="nav-link" href="users.php"><button class="nav_btn" >dummy</button></a>
-						</li>
+
 						<li class="nav-item">
 							<a class="nav-link" href="users.php"><button class="nav_btn" >dummy</button></a>
 						</li>

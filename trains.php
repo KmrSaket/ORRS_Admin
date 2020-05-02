@@ -11,58 +11,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!-- <style>
-	/* Dropdown Button */
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
+	<link rel="stylesheet" href="style\trains.css">
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-	</style> -->
-	<link rel="stylesheet" href="style\users.css">
-	<style>
+  <style>
 		tr{
 			cursor: pointer;
 		}
 	</style>
   <link rel="stylesheet" href="style\dashboard.css">
   <link rel="stylesheet" href="style\bootstrap.css">
-  <title>Users</title>
+  <title>Trains</title>
 </head>
 <body>
 
@@ -90,12 +48,13 @@
 			    <ul class="navbar-nav mr-auto">
 
 
+            <li class="nav-item">
+              <a class="nav-link" href="users.php"><button class="nav_btn" id="dropdownMenu1">Users</button></a>
+            </li>
 						<li class="nav-item">
-							<a class="nav-link" href="users.php"><button class="nav_btn" id="dropdownMenu1"  style="background-color:#c1c1c1;">Users</button></a>
+							<a class="nav-link" href="#"><button class="nav_btn" id="dropdownMenu1"  style="background-color:#c1c1c1;">Trains</button></a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="trains.php"><button class="nav_btn" id="dropdownMenu1">Trains</button></a>
-						</li>
+
 
 
 						<!-- dummy navs starts-->
@@ -108,6 +67,8 @@
 
 						<!-- dummy navs ends-->
 
+
+
 			    </ul>
 			      <a class="btn btn-outline-danger my-2 my-sm-0" type="button" name="logout" id="logoutbtn" href="includes/admin_logout_inc.php">Logout</a>
 			  </div>
@@ -118,26 +79,27 @@
 
 
 
-		<!-- list of all users (table starts) -->
+		<!-- list of all trains (table starts) -->
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<table class="table table-hover text-center" style="margin-top:10vh;" id="userTable">
+				<table class="table table-hover text-center" style="margin-top:10vh;" id="trainTable">
 					<thead class="thead-dark" >
 						<tr>
-							<th>User Name</th>
-							<th>Email</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Phone</th>
+              <th>Train No.</th>
+							<th>Train Name</th>
+							<th>Source</th>
+							<th>Destination</th>
+							<th>Running Days</th>
+							<!-- <th>classes</th> -->
 						</tr>
 					</thead>
 					<tbody  id="response">
-							<tr class="table-info">
-								<td colspan="5">
-									<h5> Please Wait!</h5>
-								</td>
-							</tr>
+						<tr class="table-info">
+							<td colspan="5">
+								<h5> Please Wait!</h5>
+							</td>
+						</tr>
 					</tbody>
 
 				</table>
@@ -146,61 +108,70 @@
 
 
 
-		<!-- list of all users (table ends) -->
+		<!-- list of all trains (table ends) -->
 
 
 
 
 		<!-- modal start -->
 
-		<div id="userModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div id="trainModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-md modal-dialog-centered" role="document"  >
 					<div class="modal-content  text-center" style="padding:5vh 2vh">
 						<div class="modal-header">
-		        	<h5 class="modal-title">
-										<input id="uname" disabled style="background-color:white; border:none;">
-							</h5>
+								<!-- <div class="container">
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start"> -->
+											<h5 class="modal-title"><input id="tnumber" disabled style="background-color:white; border:none;">
+										<!-- </div>
+										<div class="col-8 justify-content-start"> -->
+											<input id="tname" disabled style="background-color:white; border:none;"></h5>
+										<!-- </div>
+									</div>
+								</div> -->
 		      	</div>
 						<br>
 						<form class="form">
 							<div class="form-group ">
-								<div class="row align-items-start ">
+                <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
-										<label for="phone">Phone Number</label>
+										<label for="source">Source Station</label>
 									</div>
 									<div class="col-4">
-										<input id="phone" class="form-control">
+										<input id="source" class="form-control">
 									</div>
 								</div>
+
 								<br>
-								<div class="row align-items-start">
-									<div class="col-4 justify-content-start" >
-										<label for="password" > Change Password</label>
-									</div>
-									<div class="col-4">
-										<input id="password" type="password" placeholder="Enter New Password" class="form-control md-6">
-									</div>
-								</div>
-								<br>
-								<div class="row align-items-start">
+
+                <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
-										<label for="password"> Confirm Password</label>
+										<label for="destination">Destination Station</label>
 									</div>
 									<div class="col-4">
-										<input id="passwordConfirm" type="password" placeholder="Re-Enter Password" class="form-control md-6">
+										<input id="destination" class="form-control">
 									</div>
 								</div>
+
+								<br>
+
+                <div class="row align-items-start ">
+									<div class="col-4 justify-content-start">
+										<label for="runningDays">Running Days</label>
+									</div>
+									<div class="col-4">
+										<input id="runningDays" class="form-control">
+									</div>
+								</div>
+
 							</div>
 							<br>
 							<div class="row row-cols-3">
-								<div class="col-4">
-									<button class="btn btn-primary form_buttons" id="update" >Update Profile</button>
+								<div class="col-4 offset-4">
+									<button class="btn btn-primary form_buttons" id="update" >Update Train</button>
 								</div>
-								<div class="col-4">
-									<button class="btn btn-danger form_buttons" id="delete">Delete Profile</button>
-								</div>
-								<div class="col-4">
-									<button class="btn btn-secondary form_buttons" id="history"> History</button>
+								<div class="col-4 ">
+									<button class="btn btn-danger form_buttons" id="delete">Delete Train</button>
 								</div>
 							</div>
 						</form>
@@ -220,5 +191,5 @@
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/users.js"></script>
+<script type="text/javascript" src="js/trains.js"></script>
 </html>
