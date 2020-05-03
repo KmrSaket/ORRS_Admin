@@ -12,6 +12,28 @@ $('document').ready(function() {
     });
 
 
+
+    // launsh modal for insert button
+    $('#insert').click(function(){
+      $("#insertTrainModal").modal();
+    });
+
+
+
+    //ajax call for Insert
+    $('#insertTrain').click(function(){
+      $.post( "includes/trains/train_insert.php" ,
+              { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: $('#insertrunningDays').val() } ,
+            function(data) {
+              console.log(data);
+            }
+          );
+    });
+
+
+
+
+
     //ajax call for Update
     $('#update').click(function(){
       $.post( "includes/trains/train_update.php" ,

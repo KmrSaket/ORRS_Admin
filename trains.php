@@ -13,11 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="style\trains.css">
 
-  <style>
-		tr{
-			cursor: pointer;
-		}
-	</style>
+
   <link rel="stylesheet" href="style\dashboard.css">
   <link rel="stylesheet" href="style\bootstrap.css">
   <title>Trains</title>
@@ -60,9 +56,9 @@
 						<!-- dummy navs starts-->
 
 
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
-						</li>
+						</li> -->
 
 
 						<!-- dummy navs ends-->
@@ -77,13 +73,13 @@
 		<!-- navigation bar ends -->
 
 
-
+<button type="button" class="btn btn-outline-success" id="insert">New Train</button>
 
 		<!-- list of all trains (table starts) -->
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<table class="table table-hover text-center" style="margin-top:10vh;" id="trainTable">
+				<table class="table table-hover text-center" style="margin-top:5vh;" id="trainTable">
 					<thead class="thead-dark" >
 						<tr>
               <th>Train No.</th>
@@ -113,7 +109,7 @@
 
 
 
-		<!-- modal start -->
+		<!-- form for update train (modal start) -->
 
 		<div id="trainModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-md modal-dialog-centered" role="document"  >
@@ -180,7 +176,96 @@
 			</div>
 
 
-			<!-- modal ends -->
+			<!-- (modal ends) -->
+
+
+
+
+
+
+
+
+			<!-- form for update train (modal start) -->
+
+			<div id="insertTrainModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-md modal-dialog-centered" role="document"  >
+						<div class="modal-content  text-center" style="padding:5vh 2vh">
+							<div class="modal-header">
+												<h5 class="modal-title">Insert Train</h5>
+							</div>
+							<br>
+							<form class="form">
+								<div class="form-group ">
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertTrainNumber">Train Number</label>
+										</div>
+										<div class="col-4">
+											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train Number" required>
+										</div>
+									</div>
+
+									<br>
+
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertTrainName">Train Name</label>
+										</div>
+										<div class="col-4">
+											<input id="insertTrainName" class="form-control" placeholder="Enter Train Name" required>
+										</div>
+									</div>
+
+									<br>
+
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertTrainsource">Source Station</label>
+										</div>
+										<div class="col-4">
+											<input id="insertTrainsource" class="form-control" placeholder="Enter Source Station" required>
+										</div>
+									</div>
+
+									<br>
+
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertTraindestination">Destination Station</label>
+										</div>
+										<div class="col-4">
+											<input id="insertTraindestination" class="form-control" placeholder="Enter Destination Station" required>
+										</div>
+									</div>
+
+									<br>
+
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertrunningDays">Running Days</label>
+										</div>
+										<div class="col-4">
+											<input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" required>
+										</div>
+									</div>
+
+								</div>
+								<br>
+								<div class="row row-cols-3">
+									<div class="col-4 offset-4">
+										<button class="btn btn-primary form_buttons" id="insertTrain" >Insert</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- (modal ends) -->
+
+
+
 
 
 

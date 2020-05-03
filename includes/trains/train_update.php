@@ -11,26 +11,47 @@
 
 
 		// different sql statements depending on different cases
-		// if (!empty($password) && !empty($phone)) {
-		//  $sql = "UPDATE passenger SET password = ? , phone = ? WHERE user_name = ?";
-		//  // echo "both password and phone updated";
-	 	// }
-		// elseif (!empty($phone)) {
-		//   $sql = "UPDATE passenger SET phone = ? WHERE user_name = ?";
-		// 	// echo "phone updated";
-		// }
-		// elseif (!empty($password)){
-		//   $sql = "UPDATE passenger SET password = ? WHERE user_name = ?";
-		// 	// echo "password updated";
-		// }
-		// else {
-		// 	echo "nothing updated";
-		//   exit();
-		// }
+		if (!empty($source)) {
+			if (!empty($destination) ) {
+				if (!empty($runningDays) ) {
+					$sql = "UPDATE train SET source_st = ? , destination_st = ? , running_days = ? WHERE train_no = ?";
+				}
+				else {
+					$sql = "UPDATE train SET source_st = ? , destination_st = ?  WHERE train_no = ?";
+				}
+			}
+			else {
+				if (!empty($runningDays) ) {
+					$sql = "UPDATE train SET source_st = ? , running_days = ? WHERE train_no = ?";
+				}
+				else {
+					$sql = "UPDATE train SET source_st = ?  WHERE train_no = ?";
+				}
+			}
+
+	 	}
+		else {
+			if (!empty($destination) ) {
+				if (!empty($runningDays) ) {
+					$sql = "UPDATE train SET  destination_st = ? , running_days = ? WHERE train_no = ?";
+				}
+				else {
+					$sql = "UPDATE train SET  destination_st = ?  WHERE train_no = ?";
+				}
+			}
+			else {
+				if (!empty($runningDays) ) {
+					$sql = "UPDATE train SET running_days = ? WHERE train_no = ?";
+				}
+				else {
+					echo "nothing updated";
+					exit();
+				}
+			}
+		}
 
 
-		$sql = "UPDATE train SET source_st = ? , destination_st = ? , running_days = ? WHERE train_no = ?";
-// $sql = "SELECT * FROM train";
+
 			// creating connection
 			$stmt=mysqli_stmt_init($conn);
 
@@ -41,24 +62,48 @@
 			}
 			else{
 				//execute sql
-			 mysqli_stmt_bind_param($stmt,"ssii",$source,$destination,$runningDays,$tnumber);
-		 	 mysqli_stmt_execute($stmt);
-		// 		if (!empty($password) && !empty($phone)){
-		// 			echo "both password and phone updated";
-		// 			mysqli_stmt_bind_param($stmt,"sis",$hashedPwd,$phone,$uname);
-		// 			mysqli_stmt_execute($stmt);
-		// 		}
-		// 		elseif (!empty($phone)) {
-		// 			echo "phone updated";
-		// 			mysqli_stmt_bind_param($stmt,"is",$phone,$uname);
-		// 			mysqli_stmt_execute($stmt);
-		// 		}
-		// 		elseif(!empty($password)){
-		// 				echo "password updated";
-		// 				mysqli_stmt_bind_param($stmt,"ss",$hashedPwd,$uname);
-		// 				mysqli_stmt_execute($stmt);
-		// 		}
 
+			 if (!empty($source)) {
+			 	if (!empty($destination) ) {
+			 		if (!empty($runningDays) ) {
+						mysqli_stmt_bind_param($stmt,"ssii",$source,$destination,$runningDays,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 		else {
+						mysqli_stmt_bind_param($stmt,"ssi",$source,$destination,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 	}
+			 	else {
+			 		if (!empty($runningDays) ) {
+						mysqli_stmt_bind_param($stmt,"sii",$source,$runningDays,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 		else {
+						mysqli_stmt_bind_param($stmt,"si",$source,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 	}
+
+			 }
+			 else {
+			 	if (!empty($destination) ) {
+			 		if (!empty($runningDays) ) {
+						mysqli_stmt_bind_param($stmt,"sii",$destination,$runningDays,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 		else {
+						mysqli_stmt_bind_param($stmt,"ssii",$destination,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 	}
+			 	else {
+			 		if (!empty($runningDays) ) {
+						mysqli_stmt_bind_param($stmt,"ssii",$runningDays,$tnumber);
+		 		 	 mysqli_stmt_execute($stmt);
+			 		}
+			 	}
+			 }
 		}
 
 ?>

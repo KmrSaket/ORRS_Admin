@@ -7,3 +7,13 @@
 .form_buttons{
   width: 100%;
 }
+tr{
+  cursor: pointer;
+}
+#insert{
+  margin-top: 5vh;
+  margin-left: 25vh;
+}
+#insertTrainModal input::-webkit-input-placeholder{
+  font-size: 10px;
+}

@@ -101,9 +101,9 @@
 						<!-- dummy navs starts-->
 
 
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="users.php"><button class="nav_btn" id="dropdownMenu1">dummy</button></a>
-						</li>
+						</li> -->
 
 
 						<!-- dummy navs ends-->
@@ -182,14 +182,14 @@
 									</div>
 								</div>
 								<br>
-								<div class="row align-items-start">
+								<!-- <div class="row align-items-start">
 									<div class="col-4 justify-content-start">
 										<label for="password"> Confirm Password</label>
 									</div>
 									<div class="col-4">
 										<input id="passwordConfirm" type="password" placeholder="Re-Enter Password" class="form-control md-6">
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<br>
 							<div class="row row-cols-3">
