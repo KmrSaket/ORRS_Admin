@@ -200,7 +200,7 @@
 									<button class="btn btn-danger form_buttons" id="delete">Delete Profile</button>
 								</div>
 								<div class="col-4">
-									<button class="btn btn-secondary form_buttons" id="history"> History</button>
+									<button class="btn btn-secondary form_buttons" id="history">User History</button>
 								</div>
 							</div>
 						</form>
