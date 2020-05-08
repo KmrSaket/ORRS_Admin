@@ -118,7 +118,7 @@
 								<!-- <div class="container">
 									<div class="row align-items-start ">
 										<div class="col-4 justify-content-start"> -->
-											<h5 class="modal-title"><input id="tnumber" disabled style="background-color:white; border:none;">
+											<h5 class="modal-title"><input id="tnumber" disabled style="background-color:white; border:none;" type="tel" pattern="[0-9]{5}">
 										<!-- </div>
 										<div class="col-8 justify-content-start"> -->
 											<input id="tname" disabled style="background-color:white; border:none;"></h5>
@@ -201,7 +201,8 @@
 											<label for="insertTrainNumber">Train Number</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train Number" required>
+											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train Number"  >
+											<!-- type="tel" pattern="[0-9]{5}" -->
 										</div>
 									</div>
 
@@ -212,7 +213,7 @@
 											<label for="insertTrainName">Train Name</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainName" class="form-control" placeholder="Enter Train Name" required>
+											<input id="insertTrainName" class="form-control" placeholder="Enter Train Name" >
 										</div>
 									</div>
 
@@ -223,7 +224,7 @@
 											<label for="insertTrainsource">Source Station</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainsource" class="form-control" placeholder="Enter Source Station" required>
+											<input id="insertTrainsource" class="form-control" placeholder="Enter Source Station" >
 										</div>
 									</div>
 
@@ -234,7 +235,7 @@
 											<label for="insertTraindestination">Destination Station</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTraindestination" class="form-control" placeholder="Enter Destination Station" required>
+											<input id="insertTraindestination" class="form-control" placeholder="Enter Destination Station" >
 										</div>
 									</div>
 
@@ -244,8 +245,15 @@
 										<div class="col-4 justify-content-start">
 											<label for="insertrunningDays">Running Days</label>
 										</div>
-										<div class="col-4">
-											<input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" required>
+										<div class="col-8 running">
+											<!-- <input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" > -->
+											<div><label><input type="checkbox" id="sunday"><span>Su</span></label></div>
+											<div><label><input type="checkbox" id="monday"><span>M</span></label></div>
+											<div><label><input type="checkbox" id="tuesday"><span>T</span></label></div>
+											<div><label><input type="checkbox" id="wednesday"><span>W</span></label></div>
+											<div><label><input type="checkbox" id="thursday"><span>Th</span></label></div>
+											<div><label><input type="checkbox" id="friday"><span>F</span></label></div>
+											<div><label><input type="checkbox" id="saturday"><span>S</span></label></div>
 										</div>
 									</div>
 

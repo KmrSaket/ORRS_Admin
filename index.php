@@ -51,6 +51,11 @@
       </div>
     </form>
   </div>
+
+
+	<!-- login error modal start -->
+
+
   <div id="loginErrorModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document"  >
       <div class="modal-content  text-center" id="errormsg" style="padding:5vh 2vh">
@@ -58,6 +63,12 @@
       </div>
     </div>
   </div>
+
+
+	<!-- login error modal end -->
+
+
+
 
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

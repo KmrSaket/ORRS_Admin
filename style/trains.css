@@ -17,3 +17,34 @@ tr{
 #insertTrainModal input::-webkit-input-placeholder{
   font-size: 10px;
 }
+
+
+.running{
+  /* max-width: 120px; */
+  display: flex;
+  flex-wrap:wrap;
+}
+.running div{
+  margin: 4px;
+}
+.running div label{
+  font-size: 12px;
+  cursor: pointer;
+}
+.running div label input[type="checkbox"]{
+  display: none;
+}
+.running div label span{
+  position: relative;
+  display: inline-block;
+  background: #FF3333;
+  border-radius:100px;
+  padding: 5px 10px;
+  transition: 0.4s;
+  user-select: none;
+  overflow: hidden;
+}
+.running div label input[type="checkbox"]:checked ~ span{
+  background: #4CE03C;
+  color: white;
+}

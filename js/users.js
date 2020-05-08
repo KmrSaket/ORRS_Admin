@@ -1,5 +1,25 @@
 $('document').ready(function() {
 
+
+
+  // user form validation
+      //phone
+      // var input = document.getElementById('phone');
+      //     input.oninvalid = function(event) {
+      //     event.target.setCustomValidity('10 digit Phone number!');
+      //     }
+      //     input.oninput = function(event) {
+      //     event.target.setCustomValidity('');
+      //     }
+
+
+
+
+
+
+
+
+
     //ajax call for fetching users list
     $.ajax({
       url: 'includes/users/users_fetch.php',
@@ -15,6 +35,7 @@ $('document').ready(function() {
     //ajax call for Update
     $('#update').click(function(){
       $.post( "includes/users/user_update.php" ,
+      // $.post( "includes/test.php" ,
             { uname: $('#uname').val(), psw: $('#password').val() , phone: $('#phone').val() } ,
             function(data) {
               console.log(data);

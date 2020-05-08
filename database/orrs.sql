@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 03, 2020 at 06:10 PM
+-- Generation Time: May 08, 2020 at 01:28 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -69,8 +69,7 @@ CREATE TABLE IF NOT EXISTS `passenger` (
 --
 
 INSERT INTO `passenger` (`user_id`, `user_name`, `fname`, `lname`, `email`, `password`, `phone`) VALUES
-(2, 'JDoe', 'John', 'Doe', 'johndoe@gmail.com', '$2y$10$o4TL7HQEeIf./y0YcFNrH.O6btCcwJwGO8F//yWz9bZkqa2fYGmDy', '1212121212'),
-(3, 'qw', 'qwerty', 'Kumar', 'asdfghjk@gmail.com', '$2y$10$EwNFZBYa0gzFUz5NkUYh0eR8jZUj.f.ozbfvOR64D1tx.bNZ7Zdvi', '1111111111');
+(3, 'qw', 'qwerty', 'Kumar', 'asdfghjk@gmail.com', '$2y$10$hz58a4AvlRdtsFFxyPT7/OwtSv1.DXs5eerHBexZFptdNSLAltSNS', '1212121212');
 
 -- --------------------------------------------------------
 
@@ -106,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `train` (
   `train_name` varchar(50) NOT NULL,
   `source_st` varchar(50) NOT NULL,
   `destination_st` varchar(50) NOT NULL,
-  `running_days` int(7) NOT NULL,
+  `running_days` int(8) NOT NULL,
   PRIMARY KEY (`train_no`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -115,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `train` (
 --
 
 INSERT INTO `train` (`train_no`, `train_name`, `source_st`, `destination_st`, `running_days`) VALUES
-(1234, 'S F Exp', 'A', 'C', 1101010);
+(11221, 'q', 'qw', 'qww', 11000100);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

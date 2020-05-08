@@ -38,6 +38,15 @@
 						<?php
           }
         }
+				else {
+					?>
+					<tr class="table-danger">
+						<td colspan="5">
+							<h5> No Users in Database!</h5>
+						</td>
+					</tr>
+					<?php
+				}
 		}
 
 ?>

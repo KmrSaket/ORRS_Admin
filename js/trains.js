@@ -1,5 +1,26 @@
 $('document').ready(function() {
 
+
+
+
+  // insert train form validation
+      //train number
+      // var tnumber = document.getElementById('insertTrainNumber');
+      //     tnumber.oninvalid = function(event) {
+      //     event.target.setCustomValidity('5 digit train number!');
+      //     }
+      //     tnumber.oninput = function(event) {
+      //     event.target.setCustomValidity('');
+      //     }
+
+
+
+
+
+
+
+
+
     //ajax call for fetching users list
     $.ajax({
       url: 'includes/trains/trains_fetch.php',
@@ -22,8 +43,81 @@ $('document').ready(function() {
 
     //ajax call for Insert
     $('#insertTrain').click(function(){
+
+
+
+      // converting running days from checkbox to string (start)
+      var days="1";
+      var Suday = document.getElementById('sunday');
+      var Mday = document.getElementById('monday');
+      var Tuday = document.getElementById('tuesday');
+      var Wday = document.getElementById('wednesday');
+      var Thday = document.getElementById('thursday');
+      var Fday = document.getElementById('friday');
+      var Saday = document.getElementById('saturday');
+
+
+
+      if(Suday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+      
+      if(Mday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+      if(Tuday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+      if(Wday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+      if(Thday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+      if(Fday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+      if(Saday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+
+
+
+      console.log(days);
+      // converting running days from checkbox to string (start)
+
+
+
+
       $.post( "includes/trains/train_insert.php" ,
-              { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: $('#insertrunningDays').val() } ,
+              { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: days } ,
             function(data) {
               console.log(data);
             }
