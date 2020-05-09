@@ -48,59 +48,59 @@ $('document').ready(function() {
 
       // converting running days from checkbox to string (start)
       var days="1";
-      var Suday = document.getElementById('sunday');
-      var Mday = document.getElementById('monday');
-      var Tuday = document.getElementById('tuesday');
-      var Wday = document.getElementById('wednesday');
-      var Thday = document.getElementById('thursday');
-      var Fday = document.getElementById('friday');
-      var Saday = document.getElementById('saturday');
+      var insertSuday = document.getElementById('insertsunday');
+      var insertMday = document.getElementById('insertmonday');
+      var insertTuday = document.getElementById('inserttuesday');
+      var insertWday = document.getElementById('insertwednesday');
+      var insertThday = document.getElementById('insertthursday');
+      var insertFday = document.getElementById('insertfriday');
+      var insertSaday = document.getElementById('insertsaturday');
 
 
 
-      if(Suday.checked == true){
-        days=days+"1";
-      }
-      else {
-        days=days+"0"
-      }
-      
-      if(Mday.checked == true){
+      if(insertSuday.checked == true){
         days=days+"1";
       }
       else {
         days=days+"0"
       }
 
-      if(Tuday.checked == true){
+      if(insertMday.checked == true){
         days=days+"1";
       }
       else {
         days=days+"0"
       }
 
-      if(Wday.checked == true){
+      if(insertTuday.checked == true){
         days=days+"1";
       }
       else {
         days=days+"0"
       }
 
-      if(Thday.checked == true){
+      if(insertWday.checked == true){
         days=days+"1";
       }
       else {
         days=days+"0"
       }
 
-      if(Fday.checked == true){
+      if(insertThday.checked == true){
         days=days+"1";
       }
       else {
         days=days+"0"
       }
 
-      if(Saday.checked == true){
+      if(insertFday.checked == true){
+        days=days+"1";
+      }
+      else {
+        days=days+"0"
+      }
+
+      if(insertSaday.checked == true){
         days=days+"1";
       }
       else {
@@ -111,7 +111,7 @@ $('document').ready(function() {
 
 
       console.log(days);
-      // converting running days from checkbox to string (start)
+      // converting running days from checkbox to string (end)
 
 
 
@@ -130,12 +130,111 @@ $('document').ready(function() {
 
     //ajax call for Update
     $('#update').click(function(){
-      $.post( "includes/trains/train_update.php" ,
-              { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#source').val(), destination: $('#destination').val(), runningDays: $('#runningDays').val() } ,
-            function(data) {
-              console.log(data);
+
+
+
+            // converting running days from checkbox to string (start)
+            var updatedays="1";
+            var updateSuday = document.getElementById('updatesunday');
+            var updateMday = document.getElementById('updatemonday');
+            var updateTuday = document.getElementById('updatetuesday');
+            var updateWday = document.getElementById('updatewednesday');
+            var updateThday = document.getElementById('updatethursday');
+            var updateFday = document.getElementById('updatefriday');
+            var updateSaday = document.getElementById('updatesaturday');
+
+
+
+            if(updateSuday.checked == true){
+              updatedays=updatedays+"1";
             }
-          );
+            else {
+              updatedays=updatedays+"0"
+            }
+
+            if(updateMday.checked == true){
+              updatedays=updatedays+"1";
+            }
+            else {
+              updatedays=updatedays+"0"
+            }
+
+            if(updateTuday.checked == true){
+              updatedays=updatedays+"1";
+            }
+            else {
+              updatedays=updatedays+"0"
+            }
+
+            if(updateWday.checked == true){
+              updatedays=updatedays+"1";
+            }
+            else {
+              updatedays=updatedays+"0"
+            }
+
+            if(updateThday.checked == true){
+              updatedays=updatedays+"1";
+            }
+            else {
+              updatedays=updatedays+"0"
+            }
+
+            if(updateFday.checked == true){
+              updatedays=updatedays+"1";
+            }
+            else {
+              updatedays=updatedays+"0"
+            }
+
+            if(updateSaday.checked == true){
+              updatedays=updatedays+"1";
+            }
+            else {
+              updatedays=updatedays+"0"
+            }
+            //console.log(updatedays);
+            // converting running days from checkbox to string (end)
+
+
+
+            // run different ajax for different combinations of input
+
+            if($('#updatedestination').val().trim().length==0  &&  $('#updatesource').val().trim().length==0){
+              // console.log($('#updatesource').attr('placeholder'));
+              $.post( "includes/trains/train_update.php" ,
+                      { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').attr('placeholder'), destination: $('#updatedestination').attr('placeholder'), runningDays: updatedays } ,
+                    function(data) {
+                      console.log(data);
+                    }
+                  );
+            }
+            else if ($('#updatedestination').val().trim().length==0) {
+              $.post( "includes/trains/train_update.php" ,
+                      { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').val(), destination: $('#updatedestination').attr('placeholder'), runningDays: updatedays } ,
+                    function(data) {
+                      console.log(data);
+                    }
+                  );
+            }
+            else if ($('#updatesource').val().trim().length==0) {
+              $.post( "includes/trains/train_update.php" ,
+                      { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').attr('placeholder'), destination: $('#updatedestination').val(), runningDays: updatedays } ,
+                    function(data) {
+                      console.log(data);
+                    }
+                  );
+            }
+            else {
+              $.post( "includes/trains/train_update.php" ,
+                      { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').val(), destination: $('#updatedestination').val(), runningDays: updatedays } ,
+                    function(data) {
+                      console.log(data);
+                    }
+                  );
+            }
+
+
     });
 
     //ajax call for Delete
@@ -157,14 +256,65 @@ $('document').ready(function() {
          var tname=currentRow.find("td:eq(1)").text().trim();
          var source=currentRow.find("td:eq(2)").text().trim();
          var destination=currentRow.find("td:eq(3)").text().trim();
-         var rdays=currentRow.find("td:eq(4)").text().trim();
-
+         var rdays=currentRow.find("td:eq(5)").text().trim();
+         // console.log(rdays[2]);
          // setting values of inputs in form of modal
          document.getElementById("tnumber").value=tno;
          document.getElementById("tname").value=tname;
          // setting placeholder values of inputs in form of modal
-         $('#source').attr('placeholder', source);
-         $('#destination').attr('placeholder', destination);
+         $('#updatesource').attr('placeholder', source);
+         $('#updatedestination').attr('placeholder', destination);
+
+         var updateSuday = document.getElementById('updatesunday');
+         var updateMday = document.getElementById('updatemonday');
+         var updateTuday = document.getElementById('updatetuesday');
+         var updateWday = document.getElementById('updatewednesday');
+         var updateThday = document.getElementById('updatethursday');
+         var updateFday = document.getElementById('updatefriday');
+         var updateSaday = document.getElementById('updatesaturday');
+
+         if(rdays[1]==1){
+           updateSuday.checked = true;
+         }
+         else {
+           updateSuday.checked = false;
+         }
+         if(rdays[2]==1){
+           updateMday.checked = true;
+         }
+         else {
+           updateMday.checked = false;
+         }
+         if(rdays[3]==1){
+           updateTuday.checked = true;
+         }
+         else {
+           updateTuday.checked = false;
+         }
+         if(rdays[4]==1){
+           updateWday.checked = true;
+         }
+         else {
+           updateWday.checked = false;
+         }
+         if(rdays[5]==1){
+           updateThday.checked = true;
+         }
+         else {
+           updateThday.checked = false;
+         }
+         if(rdays[6]==1){
+           updateFday.checked = true;
+         }
+         else {
+           updateFday.checked = false;
+         }
+         if(rdays[7]==1){
+           updateSaday.checked = true;
+         }
+         else {
+           updateSaday.checked = false;
+         }
          $('#runningDays').attr('placeholder', rdays);
          // launch modal
          $("#trainModal").modal();

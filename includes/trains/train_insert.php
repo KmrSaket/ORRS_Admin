@@ -10,7 +10,7 @@
     $runningDays 	= $_POST['runningDays'];
 
 
-    if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays) && $source!=$destination && is_numeric($tnumber) && strlen($tnumber)==5 && preg_match("/^[a-zA-Z]+$/", $tname) && strlen($tname)<=50 && preg_match("/^[a-zA-Z]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z]+$/", $destination) && strlen($destination)<=50  && preg_match("/^[0-1]+$/", $runningDays) && strlen($runningDays)==8) {
+    if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays) && $source!=$destination && is_numeric($tnumber) && strlen($tnumber)==5 && preg_match("/^[a-zA-Z\s]+$/", $tname) && strlen($tname)<=50 && preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50  && preg_match("/^[0-1]+$/", $runningDays) && strlen($runningDays)==8) {
         $sql = " INSERT INTO train (train_no, train_name, source_st, destination_st, running_days) VALUES (?,?,?,?,?) " ;
     }
     else {

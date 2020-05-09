@@ -8,47 +8,42 @@
 		$source 	= $_POST['source'];
     $destination 	= $_POST['destination'];
     $runningDays 	= $_POST['runningDays'];
-
+// echo $tnumber." ".$tname." ".$source." ".$destination." ".$runningDays;
 
 		// different sql statements depending on different cases
-		if (!empty($source)) {
-			if (!empty($destination) ) {
-				if (!empty($runningDays) ) {
-					$sql = "UPDATE train SET source_st = ? , destination_st = ? , running_days = ? WHERE train_no = ?";
-				}
-				else {
-					$sql = "UPDATE train SET source_st = ? , destination_st = ?  WHERE train_no = ?";
-				}
-			}
-			else {
-				if (!empty($runningDays) ) {
-					$sql = "UPDATE train SET source_st = ? , running_days = ? WHERE train_no = ?";
-				}
-				else {
-					$sql = "UPDATE train SET source_st = ?  WHERE train_no = ?";
-				}
-			}
-
-	 	}
-		else {
-			if (!empty($destination) ) {
-				if (!empty($runningDays) ) {
-					$sql = "UPDATE train SET  destination_st = ? , running_days = ? WHERE train_no = ?";
-				}
-				else {
-					$sql = "UPDATE train SET  destination_st = ?  WHERE train_no = ?";
-				}
-			}
-			else {
-				if (!empty($runningDays) ) {
-					$sql = "UPDATE train SET running_days = ? WHERE train_no = ?";
-				}
-				else {
-					echo "nothing updated";
-					exit();
-				}
-			}
+		// && !empty($source) && !empty($destination)
+		if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays) && $source!=$destination && is_numeric($tnumber) && strlen($tnumber)==5 && preg_match("/^[a-zA-Z\s]+$/", $tname) && strlen($tname)<=50 && preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50  && preg_match("/^[0-1]+$/", $runningDays) && strlen($runningDays)==8) {
+				$sql = " UPDATE  train SET source_st = ? , destination_st = ?, running_days= ? WHERE train_no = ?" ;
 		}
+		else {
+			 echo "if condition error";
+			exit();
+		}
+
+
+
+		// if (!empty($tnumber) && !empty($tname) && !empty($runningDays) &&  $source!=$destination && is_numeric($tnumber) && strlen($tnumber)==5 && preg_match("/^[a-zA-Z\s]+$/", $tname) && strlen($tname)<=50 && preg_match("/^[0-1]+$/", $runningDays) && strlen($runningDays)==8) {
+		// 	//check for source and destination
+		// 	//preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50  &&
+		// 	if (!empty($source) && !empty($destination) && preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50) {
+		// 		$sql = " UPDATE  train SET source_st = ? , destination_st = ?, running_days= ? WHERE train_no = ?" ;
+		// 	}
+		// 	elseif (!empty($source) && preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50) {
+		// 			$sql = " UPDATE  train SET source_st = ? , running_days= ? WHERE train_no = ?" ;
+		// 	}
+		// 	elseif (!empty($destination) && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50) {
+		// 		$sql = " UPDATE  train SET  destination_st = ?, running_days= ? WHERE train_no = ?" ;
+		// 	}
+		// 	else {
+		// 		exit();
+		// 	}
+    // }
+    // else {
+    //   // echo "emptyfields";
+    //   exit();
+    // }
+
+
 
 
 
@@ -62,48 +57,8 @@
 			}
 			else{
 				//execute sql
-
-			 if (!empty($source)) {
-			 	if (!empty($destination) ) {
-			 		if (!empty($runningDays) ) {
-						mysqli_stmt_bind_param($stmt,"ssii",$source,$destination,$runningDays,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 		else {
-						mysqli_stmt_bind_param($stmt,"ssi",$source,$destination,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 	}
-			 	else {
-			 		if (!empty($runningDays) ) {
-						mysqli_stmt_bind_param($stmt,"sii",$source,$runningDays,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 		else {
-						mysqli_stmt_bind_param($stmt,"si",$source,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 	}
-
-			 }
-			 else {
-			 	if (!empty($destination) ) {
-			 		if (!empty($runningDays) ) {
-						mysqli_stmt_bind_param($stmt,"sii",$destination,$runningDays,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 		else {
-						mysqli_stmt_bind_param($stmt,"ssii",$destination,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 	}
-			 	else {
-			 		if (!empty($runningDays) ) {
-						mysqli_stmt_bind_param($stmt,"ssii",$runningDays,$tnumber);
-		 		 	 mysqli_stmt_execute($stmt);
-			 		}
-			 	}
-			 }
+					mysqli_stmt_bind_param($stmt,"ssii",$source,$destination,$runningDays,$tnumber);
+					mysqli_stmt_execute($stmt);
 		}
 
 ?>

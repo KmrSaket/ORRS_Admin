@@ -62,6 +62,7 @@
 									<td> <?php echo $result['source_st']; ?> </td>
 									<td> <?php echo $result['destination_st']; ?> </td>
 									<td> <?php echo $days; ?> </td>
+									<td> <?php echo $result['running_days']; ?> </td> 	<!--hidden in front end-->
 
 									<!-- <td> <?php echo $result['running_days']; ?> </td> -->
                   <!-- <td> <?php echo $result['classes']; ?> </td> -->

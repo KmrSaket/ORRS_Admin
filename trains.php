@@ -131,10 +131,10 @@
 							<div class="form-group ">
                 <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
-										<label for="source">Source Station</label>
+										<label for="updatesource">Source Station</label>
 									</div>
 									<div class="col-4">
-										<input id="source" class="form-control">
+										<input id="updatesource" class="form-control">
 									</div>
 								</div>
 
@@ -142,10 +142,10 @@
 
                 <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
-										<label for="destination">Destination Station</label>
+										<label for="updatedestination">Destination Station</label>
 									</div>
 									<div class="col-4">
-										<input id="destination" class="form-control">
+										<input id="updatedestination" class="form-control">
 									</div>
 								</div>
 
@@ -155,8 +155,15 @@
 									<div class="col-4 justify-content-start">
 										<label for="runningDays">Running Days</label>
 									</div>
-									<div class="col-4">
-										<input id="runningDays" class="form-control">
+									<div class="col-8 running">
+										<!-- <input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" > -->
+										<div><label><input type="checkbox" id="updatesunday"><span>Su</span></label></div>
+										<div><label><input type="checkbox" id="updatemonday"><span>M</span></label></div>
+										<div><label><input type="checkbox" id="updatetuesday"><span>T</span></label></div>
+										<div><label><input type="checkbox" id="updatewednesday"><span>W</span></label></div>
+										<div><label><input type="checkbox" id="updatethursday"><span>Th</span></label></div>
+										<div><label><input type="checkbox" id="updatefriday"><span>F</span></label></div>
+										<div><label><input type="checkbox" id="updatesaturday"><span>S</span></label></div>
 									</div>
 								</div>
 
@@ -185,7 +192,7 @@
 
 
 
-			<!-- form for update train (modal start) -->
+			<!-- form for insert train (modal start) -->
 
 			<div id="insertTrainModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-md modal-dialog-centered" role="document"  >
@@ -201,7 +208,7 @@
 											<label for="insertTrainNumber">Train Number</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train Number"  >
+											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train No.(5 digits)"  >
 											<!-- type="tel" pattern="[0-9]{5}" -->
 										</div>
 									</div>
@@ -247,13 +254,13 @@
 										</div>
 										<div class="col-8 running">
 											<!-- <input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" > -->
-											<div><label><input type="checkbox" id="sunday"><span>Su</span></label></div>
-											<div><label><input type="checkbox" id="monday"><span>M</span></label></div>
-											<div><label><input type="checkbox" id="tuesday"><span>T</span></label></div>
-											<div><label><input type="checkbox" id="wednesday"><span>W</span></label></div>
-											<div><label><input type="checkbox" id="thursday"><span>Th</span></label></div>
-											<div><label><input type="checkbox" id="friday"><span>F</span></label></div>
-											<div><label><input type="checkbox" id="saturday"><span>S</span></label></div>
+											<div><label><input type="checkbox" id="insertsunday"><span>Su</span></label></div>
+											<div><label><input type="checkbox" id="insertmonday"><span>M</span></label></div>
+											<div><label><input type="checkbox" id="inserttuesday"><span>T</span></label></div>
+											<div><label><input type="checkbox" id="insertwednesday"><span>W</span></label></div>
+											<div><label><input type="checkbox" id="insertthursday"><span>Th</span></label></div>
+											<div><label><input type="checkbox" id="insertfriday"><span>F</span></label></div>
+											<div><label><input type="checkbox" id="insertsaturday"><span>S</span></label></div>
 										</div>
 									</div>
 
