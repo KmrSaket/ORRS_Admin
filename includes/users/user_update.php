@@ -12,11 +12,11 @@
 
 
 		// different sql statements depending on different cases
-		if (!empty($password) && !empty($phone) && strlen($phone)==10 && is_numeric($phone)) {
+		if (!empty($password) && !empty($phone) && $phone[0]!=0 && strlen($phone)==10 && is_numeric($phone)) {
 		 $sql = "UPDATE passenger SET password = ? , phone = ? WHERE user_name = ?";
 		 // echo "both password and phone updated";
 	 	}
-		elseif (!empty($phone) && strlen($phone)==10 && is_numeric($phone)) {
+		elseif (!empty($phone) && $phone[0]!=0 && strlen($phone)==10 && is_numeric($phone)) {
 		  $sql = "UPDATE passenger SET phone = ? WHERE user_name = ?";
 			// echo "phone updated";
 		}
