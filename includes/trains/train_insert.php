@@ -8,9 +8,11 @@
 		$source 	= $_POST['source'];
     $destination 	= $_POST['destination'];
     $runningDays 	= $_POST['runningDays'];
+    $distance = $_POST['distance'];
+    $ticketPrice = $_POST['ticketPrice'];
 
-    if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays)) {
-        $sql="INSERT INTO train (train_no, train_name, source_st, destination_st, running_days) VALUES (?,?,?,?,?)";
+    if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays) && !empty($distance) && !empty($ticketPrice)) {
+        $sql="INSERT INTO train (train_no, train_name, source_st, destination_st, running_days, distance, ticket_price) VALUES (?,?,?,?,?,?,?)";
     }
     else {
       echo "emptyfields";
@@ -31,7 +33,7 @@
 			else{
 				//execute sql
         // echo "success";
-					mysqli_stmt_bind_param($stmt,"isssi",$tnumber,$tname,$source,$destination,$runningDays);
+					mysqli_stmt_bind_param($stmt,"isssiii",$tnumber,$tname,$source,$destination,$runningDays, $distance, $ticketPrice);
 		 		 	mysqli_stmt_execute($stmt);
 
 			 	}
