@@ -181,7 +181,7 @@
 										<label for="ticketPrice">Ticket Price</label>
 									</div>
 									<div class="col-4">
-										<input id="ticketprice" class="form-control">
+										<input id="ticketPrice" class="form-control">
 									</div>
 								</div>
 							
