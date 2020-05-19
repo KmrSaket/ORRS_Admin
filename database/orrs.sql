@@ -107,6 +107,8 @@ CREATE TABLE IF NOT EXISTS `train` (
   `source_st` varchar(50) NOT NULL,
   `destination_st` varchar(50) NOT NULL,
   `running_days` int(7) NOT NULL,
+  `distance` int(4) NOT NULL,
+  `ticket_price` int(5) NOT NULL,
   PRIMARY KEY (`train_no`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -115,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `train` (
 --
 
 INSERT INTO `train` (`train_no`, `train_name`, `source_st`, `destination_st`, `running_days`) VALUES
-(1234, 'S F Exp', 'A', 'C', 1101010);
+(1234, 'S F Exp', 'A', 'C', 1101010, 400, 250);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
