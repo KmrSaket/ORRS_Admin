@@ -8,6 +8,8 @@
 		$source 	= $_POST['source'];
     $destination 	= $_POST['destination'];
     $runningDays 	= $_POST['runningDays'];
+    $distance   = $_POST['distance'];
+    $ticketPrice = $_POST['ticketPrice'];
 
 
 		// different sql statements depending on different cases
