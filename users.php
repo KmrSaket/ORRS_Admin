@@ -91,7 +91,7 @@
 
 
 						<li class="nav-item">
-							<a class="nav-link" href="users.php"><button class="nav_btn" id="dropdownMenu1"  style="background-color:#c1c1c1;">Users</button></a>
+							<a class="nav-link" href="#"><button class="nav_btn" id="dropdownMenu1"  style="background-color:#c1c1c1;">Users</button></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="trains.php"><button class="nav_btn" id="dropdownMenu1">Trains</button></a>
@@ -151,7 +151,7 @@
 
 
 
-		<!-- modal start -->
+		<!-- user form (modal start) -->
 
 		<div id="userModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-md modal-dialog-centered" role="document"  >
@@ -169,7 +169,8 @@
 										<label for="phone">Phone Number</label>
 									</div>
 									<div class="col-4">
-										<input id="phone" class="form-control">
+										<input id="phone"  class="form-control" >
+										<!-- type="tel" pattern="[0-9]{10}" -->
 									</div>
 								</div>
 								<br>
@@ -209,8 +210,9 @@
 			</div>
 
 
-			<!-- modal ends -->
 
+
+			<!--user form (modal ends) -->
 
 
 
@@ -221,4 +223,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/users.js"></script>
+
 </html>

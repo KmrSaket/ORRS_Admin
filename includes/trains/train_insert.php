@@ -15,7 +15,7 @@
         $sql="INSERT INTO train (train_no, train_name, source_st, destination_st, running_days, distance, ticket_price) VALUES (?,?,?,?,?,?,?)";
     }
     else {
-      echo "emptyfields";
+      // echo "emptyfields";
       exit();
     }
 

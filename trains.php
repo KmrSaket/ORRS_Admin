@@ -120,7 +120,7 @@
 								<!-- <div class="container">
 									<div class="row align-items-start ">
 										<div class="col-4 justify-content-start"> -->
-											<h5 class="modal-title"><input id="tnumber" disabled style="background-color:white; border:none;">
+											<h5 class="modal-title"><input id="tnumber" disabled style="background-color:white; border:none;" type="tel" pattern="[0-9]{5}">
 										<!-- </div>
 										<div class="col-8 justify-content-start"> -->
 											<input id="tname" disabled style="background-color:white; border:none;"></h5>
@@ -133,10 +133,10 @@
 							<div class="form-group ">
                 <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
-										<label for="source">Source Station</label>
+										<label for="updatesource">Source Station</label>
 									</div>
 									<div class="col-4">
-										<input id="source" class="form-control">
+										<input id="updatesource" class="form-control">
 									</div>
 								</div>
 
@@ -144,10 +144,10 @@
 
                 <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
-										<label for="destination">Destination Station</label>
+										<label for="updatedestination">Destination Station</label>
 									</div>
 									<div class="col-4">
-										<input id="destination" class="form-control">
+										<input id="updatedestination" class="form-control">
 									</div>
 								</div>
 
@@ -157,8 +157,15 @@
 									<div class="col-4 justify-content-start">
 										<label for="runningDays">Running Days</label>
 									</div>
-									<div class="col-4">
-										<input id="runningDays" class="form-control">
+									<div class="col-8 running">
+										<!-- <input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" > -->
+										<div><label><input type="checkbox" id="updatesunday"><span>Su</span></label></div>
+										<div><label><input type="checkbox" id="updatemonday"><span>M</span></label></div>
+										<div><label><input type="checkbox" id="updatetuesday"><span>T</span></label></div>
+										<div><label><input type="checkbox" id="updatewednesday"><span>W</span></label></div>
+										<div><label><input type="checkbox" id="updatethursday"><span>Th</span></label></div>
+										<div><label><input type="checkbox" id="updatefriday"><span>F</span></label></div>
+										<div><label><input type="checkbox" id="updatesaturday"><span>S</span></label></div>
 									</div>
 								</div>
 
@@ -210,7 +217,7 @@
 
 
 
-			<!-- form for update train (modal start) -->
+			<!-- form for insert train (modal start) -->
 
 			<div id="insertTrainModal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-md modal-dialog-centered" role="document"  >
@@ -226,7 +233,8 @@
 											<label for="insertTrainNumber">Train Number</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train Number" required>
+											<input id="insertTrainNumber" class="form-control" placeholder="Enter Train No.(5 digits)"  >
+											<!-- type="tel" pattern="[0-9]{5}" -->
 										</div>
 									</div>
 
@@ -237,7 +245,7 @@
 											<label for="insertTrainName">Train Name</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainName" class="form-control" placeholder="Enter Train Name" required>
+											<input id="insertTrainName" class="form-control" placeholder="Enter Train Name" >
 										</div>
 									</div>
 
@@ -248,7 +256,7 @@
 											<label for="insertTrainsource">Source Station</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTrainsource" class="form-control" placeholder="Enter Source Station" required>
+											<input id="insertTrainsource" class="form-control" placeholder="Enter Source Station" >
 										</div>
 									</div>
 
@@ -259,7 +267,7 @@
 											<label for="insertTraindestination">Destination Station</label>
 										</div>
 										<div class="col-4">
-											<input id="insertTraindestination" class="form-control" placeholder="Enter Destination Station" required>
+											<input id="insertTraindestination" class="form-control" placeholder="Enter Destination Station" >
 										</div>
 									</div>
 
@@ -269,8 +277,15 @@
 										<div class="col-4 justify-content-start">
 											<label for="insertrunningDays">Running Days</label>
 										</div>
-										<div class="col-4">
-											<input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" required>
+										<div class="col-8 running">
+											<!-- <input id="insertrunningDays" class="form-control" placeholder="Enter Running Days" > -->
+											<div><label><input type="checkbox" id="insertsunday"><span>Su</span></label></div>
+											<div><label><input type="checkbox" id="insertmonday"><span>M</span></label></div>
+											<div><label><input type="checkbox" id="inserttuesday"><span>T</span></label></div>
+											<div><label><input type="checkbox" id="insertwednesday"><span>W</span></label></div>
+											<div><label><input type="checkbox" id="insertthursday"><span>Th</span></label></div>
+											<div><label><input type="checkbox" id="insertfriday"><span>F</span></label></div>
+											<div><label><input type="checkbox" id="insertsaturday"><span>S</span></label></div>
 										</div>
 									</div>
 									
