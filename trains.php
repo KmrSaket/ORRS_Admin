@@ -87,6 +87,8 @@
 							<th>Source</th>
 							<th>Destination</th>
 							<th>Running Days</th>
+							<th>Distance</th>
+							<th>Ticket Price</th>
 							<!-- <th>classes</th> -->
 						</tr>
 					</thead>
@@ -169,6 +171,29 @@
 
 							</div>
 							<br>
+							
+							<div class="row align-items-start ">
+									<div class="col-4 justify-content-start">
+										<label for="distance">Distance</label>
+									</div>
+									<div class="col-4">
+										<input id="distance" class="form-control">
+									</div>
+								</div>
+							
+							<br>
+							
+							<div class="row align-items-start ">
+									<div class="col-4 justify-content-start">
+										<label for="ticketPrice">Ticket Price</label>
+									</div>
+									<div class="col-4">
+										<input id="ticketPrice" class="form-control">
+									</div>
+								</div>
+							
+							<br>
+							
 							<div class="row row-cols-3">
 								<div class="col-4 offset-4">
 									<button class="btn btn-primary form_buttons" id="update" >Update Train</button>
@@ -261,6 +286,28 @@
 											<div><label><input type="checkbox" id="insertthursday"><span>Th</span></label></div>
 											<div><label><input type="checkbox" id="insertfriday"><span>F</span></label></div>
 											<div><label><input type="checkbox" id="insertsaturday"><span>S</span></label></div>
+										</div>
+									</div>
+									
+									<br>
+									
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertdistance">Distance</label>
+										</div>
+										<div class="col-4">
+											<input id="insertdistance" class="form-control" placeholder="Enter Distance" required>
+										</div>
+									</div>
+									
+									<br>
+									
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertticketprice">Ticket Price</label>
+										</div>
+										<div class="col-4">
+											<input id="insertticketprice" class="form-control" placeholder="Enter Ticket Price" required>
 										</div>
 									</div>
 
