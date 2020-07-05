@@ -127,7 +127,7 @@
 								</div> -->
 		      	</div>
 						<br>
-						<form class="form">
+						<form class="form" id="updateTrainForm">
 							<div class="form-group ">
                 <div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
@@ -171,10 +171,10 @@
 							<br>
 							<div class="row row-cols-3">
 								<div class="col-4 offset-4">
-									<button class="btn btn-primary form_buttons" id="update" >Update Train</button>
+									<button type="button" class="btn btn-primary form_buttons" id="update" >Update Train</button>
 								</div>
 								<div class="col-4 ">
-									<button class="btn btn-danger form_buttons" id="delete">Delete Train</button>
+									<button type="button" class="btn btn-danger form_buttons" id="delete">Delete Train</button>
 								</div>
 							</div>
 						</form>
@@ -201,7 +201,7 @@
 												<h5 class="modal-title">Insert Train</h5>
 							</div>
 							<br>
-							<form class="form">
+							<form class="form" id="trainform">
 								<div class="form-group ">
 									<div class="row align-items-start ">
 										<div class="col-4 justify-content-start">
@@ -268,7 +268,7 @@
 								<br>
 								<div class="row row-cols-3">
 									<div class="col-4 offset-4">
-										<button class="btn btn-primary form_buttons" id="insertTrain" >Insert</button>
+										<button type="button" class="btn btn-primary form_buttons" id="insertTrain" >Insert</button>
 									</div>
 								</div>
 							</form>
@@ -281,6 +281,21 @@
 
 
 
+
+				<!-- Generic Error msg (modal starts) -->
+
+
+
+				  <div id="errormodal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				    <div class="modal-dialog modal-sm modal-dialog-centered" role="document"  >
+				      <div class="modal-content  text-center" id="error" style="padding:5vh 2vh">
+
+				      </div>
+				    </div>
+				  </div>
+
+
+				<!-- Generic Error msg (modal ends) -->
 
 
 

@@ -16,7 +16,7 @@
 				$sql = " UPDATE  train SET source_st = ? , destination_st = ?, running_days= ? WHERE train_no = ?" ;
 		}
 		else {
-			 echo "if condition error";
+			 echo "Please Check the fields and Try again!";
 			exit();
 		}
 
@@ -58,7 +58,9 @@
 			else{
 				//execute sql
 					mysqli_stmt_bind_param($stmt,"ssii",$source,$destination,$runningDays,$tnumber);
-					mysqli_stmt_execute($stmt);
+					if (mysqli_stmt_execute($stmt)) {
+						echo "Train Updated Successfully!";
+					}
 		}
 
 ?>

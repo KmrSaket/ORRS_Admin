@@ -110,7 +110,7 @@ $('document').ready(function() {
 
 
 
-      console.log(days);
+
       // converting running days from checkbox to string (end)
 
 
@@ -118,11 +118,21 @@ $('document').ready(function() {
 
       $.post( "includes/trains/train_insert.php" ,
               { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: days } ,
-            function(data) {
-              console.log(data);
-            }
-          );
-    });
+              function(data, status){
+               // alert("Data: " + (data) + "\nStatus: " + status);
+               document.getElementById("trainform").reset();
+               $('#insertTrainModal').modal('toggle');
+               $('#errormodal').modal();
+               $('#error').text(data);
+               if ($('#error').text() == "Train inserted Successfully!") {
+                 $('#errormodal').on('hidden.bs.modal', function () {
+                   location.reload();
+                 });
+               }
+             });
+
+
+           });
 
 
 
@@ -204,32 +214,32 @@ $('document').ready(function() {
               // console.log($('#updatesource').attr('placeholder'));
               $.post( "includes/trains/train_update.php" ,
                       { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').attr('placeholder'), destination: $('#updatedestination').attr('placeholder'), runningDays: updatedays } ,
-                    function(data) {
-                      console.log(data);
+                    function(data,success) {
+                      functionName(data,success);
                     }
                   );
             }
             else if ($('#updatedestination').val().trim().length==0) {
               $.post( "includes/trains/train_update.php" ,
                       { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').val(), destination: $('#updatedestination').attr('placeholder'), runningDays: updatedays } ,
-                    function(data) {
-                      console.log(data);
+                    function(data,success) {
+                      functionName(data,success);
                     }
                   );
             }
             else if ($('#updatesource').val().trim().length==0) {
               $.post( "includes/trains/train_update.php" ,
                       { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').attr('placeholder'), destination: $('#updatedestination').val(), runningDays: updatedays } ,
-                    function(data) {
-                      console.log(data);
+                    function(data,success) {
+                      functionName(data,success);
                     }
                   );
             }
             else {
               $.post( "includes/trains/train_update.php" ,
                       { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').val(), destination: $('#updatedestination').val(), runningDays: updatedays } ,
-                    function(data) {
-                      console.log(data);
+                    function(data,success) {
+                      functionName(data,success);
                     }
                   );
             }
@@ -237,13 +247,36 @@ $('document').ready(function() {
 
     });
 
+    function functionName(data,success) {
+      // alert(data +success);
+      document.getElementById("updateTrainForm").reset();
+      $('#trainModal').modal('toggle');
+      $('#errormodal').modal();
+      $('#error').text(data);
+      if ($('#error').text() == "Train Updated Successfully!") {
+        $('#errormodal').on('hidden.bs.modal', function () {
+          location.reload();
+        });
+      }
+    }
+
+
+
+
+
     //ajax call for Delete
     $('#delete').click(function(){
       $.post( "includes/trains/train_delete.php" ,
             { tnumber: $('#tnumber').val() } ,
             function(data) {
-              console.log(data);
-            }
+              // alert("Data: " + (data) + "\nStatus: " + status);
+              $('#trainModal').modal('toggle');
+              $('#errormodal').modal();
+              $('#error').text(data);
+              $('#errormodal').on('hidden.bs.modal', function () {
+                  location.reload();
+                });
+              }
           );
     });
 

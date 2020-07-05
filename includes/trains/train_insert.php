@@ -1,5 +1,6 @@
 <?php
 
+
 		include_once ('../dbh_inc.php') ;		//includes database connection file
 
 		//assigning values to php variables	using $_POST
@@ -14,7 +15,7 @@
         $sql = " INSERT INTO train (train_no, train_name, source_st, destination_st, running_days) VALUES (?,?,?,?,?) " ;
     }
     else {
-      // echo "emptyfields";
+      echo "Please Check the fields and Try again!";
       exit();
     }
 
@@ -26,14 +27,19 @@
 
 			//check if sql connection is created
 			if(!mysqli_stmt_prepare($stmt,$sql)){
-				echo "error";
+				echo "error in database connection";
 				exit();
 			}
 			else{
 				//execute sql
         // echo "success";
 					mysqli_stmt_bind_param($stmt,"isssi",$tnumber,$tname,$source,$destination,$runningDays);
-		 		 	mysqli_stmt_execute($stmt);
+		 		 	if (mysqli_stmt_execute($stmt)) {
+		 		 		echo "Train inserted Successfully!";
+		 		 	}
+					else {
+						echo "Train Number already exist!";
+					}
 
 			 	}
 

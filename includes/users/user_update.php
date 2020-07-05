@@ -14,18 +14,18 @@
 		// different sql statements depending on different cases
 		if (!empty($password) && !empty($phone) && $phone[0]!=0 && strlen($phone)==10 && is_numeric($phone)) {
 		 $sql = "UPDATE passenger SET password = ? , phone = ? WHERE user_name = ?";
-		 // echo "both password and phone updated";
+		 // echo "Both password and phone updated Successfully!";
 	 	}
 		elseif (!empty($phone) && $phone[0]!=0 && strlen($phone)==10 && is_numeric($phone)) {
 		  $sql = "UPDATE passenger SET phone = ? WHERE user_name = ?";
-			// echo "phone updated";
+			// echo "User Phone number updated Successfully!";
 		}
 		elseif (!empty($password)){
 		  $sql = "UPDATE passenger SET password = ? WHERE user_name = ?";
-			// echo "password updated";
+			// echo "User Password updated Successfully!";
 		}
 		else {
-			// echo "nothing updated";
+			echo "An Error occured! Please check your input and try again!";
 		  exit();
 		}
 
@@ -37,26 +37,32 @@
 
 			//check if sql connection is created
 			if(!mysqli_stmt_prepare($stmt,$sql)){
-				echo "error";
+				echo "error in database connection";
 				exit();
 			}
 			else{
 				//execute sql
 				// echo "success";
 				if (!empty($password) && !empty($phone)){
-					echo "both password and phone updated";
+					// echo "both password and phone updated";
 					mysqli_stmt_bind_param($stmt,"sis",$hashedPwd,$phone,$uname);
-					mysqli_stmt_execute($stmt);
+					if (mysqli_stmt_execute($stmt)) {
+						echo "Both password and phone updated Successfully!";
+					}
 				}
 				elseif (!empty($phone)) {
-					echo "phone updated";
+					// echo "phone updated";
 					mysqli_stmt_bind_param($stmt,"is",$phone,$uname);
-					mysqli_stmt_execute($stmt);
+					if (mysqli_stmt_execute($stmt)) {
+						echo "User Phone number updated Successfully!";
+					}
 				}
 				elseif(!empty($password)){
-						echo "password updated";
+						// echo "password updated";
 						mysqli_stmt_bind_param($stmt,"ss",$hashedPwd,$uname);
-						mysqli_stmt_execute($stmt);
+						if (mysqli_stmt_execute($stmt)) {
+							echo "User Password updated Successfully!";
+						}
 				}
 		}
 

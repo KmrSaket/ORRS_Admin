@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 08, 2020 at 01:28 PM
+-- Generation Time: Jul 04, 2020 at 05:11 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `passenger` (
 --
 
 INSERT INTO `passenger` (`user_id`, `user_name`, `fname`, `lname`, `email`, `password`, `phone`) VALUES
-(3, 'qw', 'qwerty', 'Kumar', 'asdfghjk@gmail.com', '$2y$10$hz58a4AvlRdtsFFxyPT7/OwtSv1.DXs5eerHBexZFptdNSLAltSNS', '1212121212');
+(3, 'qw', 'Jhon', 'Doe', 'asdfghjk@gmail.com', '$2y$10$sh745URiBxJm9BJxknBrY.CRsyLkoURoqP5qIQ81NYdhrhphW/v06', '1212121212');
 
 -- --------------------------------------------------------
 
@@ -79,19 +79,20 @@ INSERT INTO `passenger` (`user_id`, `user_name`, `fname`, `lname`, `email`, `pas
 
 DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE IF NOT EXISTS `ticket` (
-  `ticket_no` int(11) NOT NULL,
-  `pnr` int(11) NOT NULL,
-  `transaction_id` int(11) NOT NULL,
+  `user_name` varchar(32) DEFAULT NULL,
+  `pnr` int(11) NOT NULL AUTO_INCREMENT,
   `source_st` varchar(50) NOT NULL,
   `destination_st` varchar(50) NOT NULL,
-  `date_of_booking` date NOT NULL,
-  `class` varchar(5) NOT NULL,
-  `seat_no` int(11) NOT NULL,
-  `fare` int(11) NOT NULL,
+  `dateOfBooking` date NOT NULL,
+  `p1_name` varchar(50) NOT NULL,
+  `p1_age` int(3) NOT NULL,
+  `p1_gender` varchar(6) NOT NULL,
+  `p2_name` varchar(50) NOT NULL,
+  `p2_age` int(3) NOT NULL,
+  `p2_gender` varchar(6) NOT NULL,
   PRIMARY KEY (`pnr`),
-  UNIQUE KEY `ticket_no` (`transaction_id`),
-  UNIQUE KEY `transaction_id` (`transaction_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `user_name` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,37 @@ CREATE TABLE IF NOT EXISTS `train` (
 --
 
 INSERT INTO `train` (`train_no`, `train_name`, `source_st`, `destination_st`, `running_days`) VALUES
-(11221, 'q', 'qw', 'qww', 11000100);
+(12954, 'AG KRANTI RJDHN', 'Hazrat Nizamuddin', 'Mumbai Central', 11111111),
+(12438, 'NZM SC RJDHNI', 'Hazrat Nizamuddin', 'Secunderabad Jn ', 11000000),
+(12434, 'CHENNAI RAJDHNI', 'Hazrat Nizamuddin', 'Mgr Chennai Ctr', 10001010),
+(12432, 'TRIVDRM RJDHNI', 'Hazrat Nizamuddin', 'Thiruvananthapuram Central', 11011001),
+(12423, 'DBRG RAJDHANI EX', 'Dibrugarh Town', 'New Delhi', 11111111),
+(20505, 'DBRG RAJDHANI EX', 'Dibrugarh', 'New Delhi', 10100010),
+(20503, 'DBRG NDLS RAJEXP', 'Dibrugarh', 'New Delhi', 10000100),
+(22221, 'NZM RAJDHANI EXP', 'C Shivaji Maharaj T', 'Hazrat Nizamuddin', 10101011),
+(12441, 'BSP NDLS RAJ EX', 'Bilaspur Jn', 'New Delhi', 10100100),
+(22823, 'BBS RAJDHANI EXP', 'Bhubaneswar', 'New Delhi', 10110110),
+(22811, 'BBS RAJDHANI EXP', 'Bhubaneswar', 'New Delhi', 11001000),
+(20817, 'BBS RAJDHANI EXP', 'Bhubaneswar', 'New Delhi', 10000001),
+(20502, 'Anand Vihar Terminal', 'Agartala', 'Anand Vihar Terminal', 10100000),
+(12957, 'SWARNA J RAJEX', 'Ahemdabad Jn', 'New Delhi', 11111111),
+(20501, 'AGTL ANVT RAJ', 'Agartala', 'Anand Vihar Terminal', 10100000),
+(22222, 'CSMT RAJDHANI', 'Hazrat Nizamuddin', 'C Shivaji Maharaj T', 11010101),
+(22414, 'NZM MAO RAJ', 'Hazrat Nizamuddin', 'Madgaon', 10000011),
+(22692, 'BANGLORE RJDHNI', 'Hazrat Nizamuddin', 'Ksr Bengaluru', 11111111),
+(12301, 'KOLKATA RAJDHANI', 'Hawrah Jn', 'New Delhi', 10111111),
+(11111, 'A B', 'A', 'B', 11101011),
+(11113, 'X Y', 'A', 'B', 10101010);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `ticket`
+--
+ALTER TABLE `ticket`
+  ADD CONSTRAINT `user_name` FOREIGN KEY (`user_name`) REFERENCES `passenger` (`user_name`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -34,23 +34,35 @@ $('document').ready(function() {
 
     //ajax call for Update
     $('#update').click(function(){
-      $.post( "includes/users/user_update.php" ,
-      // $.post( "includes/test.php" ,
-            { uname: $('#uname').val(), psw: $('#password').val() , phone: $('#phone').val() } ,
-            function(data) {
-              console.log(data);
-            }
-          );
+      $.post("includes/users/user_update.php",
+      { uname: $('#uname').val(), psw: $('#password').val() , phone: $('#phone').val() } ,
+       function(data, status){
+        // alert("Data: " + (data) + "\nStatus: " + status);
+        document.getElementById("userform").reset();
+        $('#userModal').modal('toggle');
+        $('#errormodal').modal();
+        $('#error').text(data);
+      });
+      $('#errormodal').on('hidden.bs.modal', function () {
+        location.reload();
+      });
     });
+
 
     //ajax call for Delete
     $('#delete').click(function(){
       $.post( "includes/users/user_delete.php" ,
-            { uname: $('#uname').val()} ,
-            function(data) {
-              console.log(data);
-            }
-          );
+            { uname: $('#uname').val() },
+            function(data, status){
+             // alert("Data: " + (data) + "\nStatus: " + status);
+             document.getElementById("userform").reset();
+             $('#userModal').modal('toggle');
+             $('#errormodal').modal();
+             $('#error').text(data);
+           });
+           $('#errormodal').on('hidden.bs.modal', function () {
+             location.reload();
+           });
     });
 
 

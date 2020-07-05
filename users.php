@@ -162,7 +162,7 @@
 							</h5>
 		      	</div>
 						<br>
-						<form class="form">
+						<form class="form" id="userform">
 							<div class="form-group ">
 								<div class="row align-items-start ">
 									<div class="col-4 justify-content-start">
@@ -179,7 +179,7 @@
 										<label for="password" > Change Password</label>
 									</div>
 									<div class="col-4">
-										<input id="password" type="password" placeholder="Enter New Password" class="form-control md-6">
+										<input id="password" type="password" placeholder="Enter New Password" class="form-control md-6" autocomplete="on">
 									</div>
 								</div>
 								<br>
@@ -195,13 +195,10 @@
 							<br>
 							<div class="row row-cols-3">
 								<div class="col-4">
-									<button class="btn btn-primary form_buttons" id="update" >Update Profile</button>
+									<button type="button" class="btn btn-primary form_buttons" id="update" >Update Profile</button>
 								</div>
 								<div class="col-4">
-									<button class="btn btn-danger form_buttons" id="delete">Delete Profile</button>
-								</div>
-								<div class="col-4">
-									<button class="btn btn-secondary form_buttons" id="history"> History</button>
+									<button type="button" class="btn btn-danger form_buttons" id="delete">Delete Profile</button>
 								</div>
 							</div>
 						</form>
@@ -213,6 +210,30 @@
 
 
 			<!--user form (modal ends) -->
+
+
+
+
+
+<!-- Generic Error msg (modal starts) -->
+
+
+
+  <div id="errormodal" class="modal fade" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document"  >
+      <div class="modal-content  text-center" id="error" style="padding:5vh 2vh">
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Generic Error msg (modal ends) -->
+
+
+
+
+
 
 
 
