@@ -9,10 +9,12 @@
 		$source 	= $_POST['source'];
     $destination 	= $_POST['destination'];
     $runningDays 	= $_POST['runningDays'];
+		$fare = $_POST['fare'];
+		$distance = $_POST['distance'];
 
 
-    if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays) && $source!=$destination && is_numeric($tnumber) && strlen($tnumber)==5 && $tnumber[0]!=0 && preg_match("/^[a-zA-Z\s]+$/", $tname) && strlen($tname)<=50 && preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50  && preg_match("/^[0-1]+$/", $runningDays) && strlen($runningDays)==8) {
-        $sql = " INSERT INTO train (train_no, train_name, source_st, destination_st, running_days) VALUES (?,?,?,?,?) " ;
+    if (!empty($tnumber) && !empty($tname) && !empty($source) && !empty($destination) && !empty($runningDays) &&!empty($fare) &&!empty($distance) && $source!=$destination && is_numeric($tnumber) && strlen($tnumber)==5 && $tnumber[0]!=0 && is_numeric($fare) && is_numeric($distance) && preg_match("/^[a-zA-Z\s]+$/", $tname) && strlen($tname)<=50 && preg_match("/^[a-zA-Z\s]+$/", $source) && strlen($source)<=50 && preg_match("/^[a-zA-Z\s]+$/", $destination) && strlen($destination)<=50  && preg_match("/^[0-1]+$/", $runningDays) && strlen($runningDays)==8 ) {
+        $sql = " INSERT INTO train (train_no, train_name, source_st, destination_st, running_days, fare, distance) VALUES (?,?,?,?,?,?,?) " ;
     }
     else {
       echo "Please Check the fields and Try again!";
@@ -33,7 +35,7 @@
 			else{
 				//execute sql
         // echo "success";
-					mysqli_stmt_bind_param($stmt,"isssi",$tnumber,$tname,$source,$destination,$runningDays);
+					mysqli_stmt_bind_param($stmt,"isssiii",$tnumber,$tname,$source,$destination,$runningDays,$fare,$distance);
 		 		 	if (mysqli_stmt_execute($stmt)) {
 		 		 		echo "Train inserted Successfully!";
 		 		 	}

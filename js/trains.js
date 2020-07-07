@@ -21,7 +21,7 @@ $('document').ready(function() {
 
 
 
-    //ajax call for fetching users list
+    //ajax call for fetching trains list
     $.ajax({
       url: 'includes/trains/trains_fetch.php',
       type: 'post',
@@ -117,7 +117,7 @@ $('document').ready(function() {
 
 
       $.post( "includes/trains/train_insert.php" ,
-              { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: days } ,
+              { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: days , destination: $('#insertTraindestination').val(), runningDays: days, fare: $('#insertTrainfare').val(), distance: $('#insertTraindistance').val()} ,
               function(data, status){
                // alert("Data: " + (data) + "\nStatus: " + status);
                document.getElementById("trainform").reset();
@@ -348,7 +348,7 @@ $('document').ready(function() {
          else {
            updateSaday.checked = false;
          }
-         $('#runningDays').attr('placeholder', rdays);
+         // $('#runningDays').attr('placeholder', rdays);
          // launch modal
          $("#trainModal").modal();
     });

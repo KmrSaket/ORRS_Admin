@@ -87,7 +87,8 @@
 							<th>Source</th>
 							<th>Destination</th>
 							<th>Running Days</th>
-							<!-- <th>classes</th> -->
+							<th>Fare</th>
+							<th>Distance</th>
 						</tr>
 					</thead>
 					<tbody  id="response">
@@ -243,6 +244,29 @@
 										</div>
 										<div class="col-4">
 											<input id="insertTraindestination" class="form-control" placeholder="Enter Destination Station" >
+										</div>
+									</div>
+
+									<br>
+
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertTrainfare">Fare</label>
+										</div>
+										<div class="col-4">
+											<input id="insertTrainfare" class="form-control" placeholder="Fare (integer only)" >
+										</div>
+									</div>
+
+									<br>
+
+
+									<div class="row align-items-start ">
+										<div class="col-4 justify-content-start">
+											<label for="insertTraindistance">Distance</label>
+										</div>
+										<div class="col-4">
+											<input id="insertTraindistance" class="form-control" placeholder="Distance (integer only)" >
 										</div>
 									</div>
 

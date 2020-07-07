@@ -64,8 +64,8 @@
 									<td> <?php echo $days; ?> </td>
 									<td> <?php echo $result['running_days']; ?> </td> 	<!--hidden in front end-->
 
-									<!-- <td> <?php echo $result['running_days']; ?> </td> -->
-                  <!-- <td> <?php echo $result['classes']; ?> </td> -->
+									<td> <?php echo $result['fare']; ?> </td>
+                  <td> <?php echo $result['distance']; ?> </td>
 							</tr>
 
 						<?php
