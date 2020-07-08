@@ -1,25 +1,6 @@
 $('document').ready(function() {
 
 
-
-  // user form validation
-      //phone
-      // var input = document.getElementById('phone');
-      //     input.oninvalid = function(event) {
-      //     event.target.setCustomValidity('10 digit Phone number!');
-      //     }
-      //     input.oninput = function(event) {
-      //     event.target.setCustomValidity('');
-      //     }
-
-
-
-
-
-
-
-
-
     //ajax call for fetching users list
     $.ajax({
       url: 'includes/users/users_fetch.php',
@@ -37,7 +18,6 @@ $('document').ready(function() {
       $.post("includes/users/user_update.php",
       { uname: $('#uname').val(), psw: $('#password').val() , phone: $('#phone').val() } ,
        function(data, status){
-        // alert("Data: " + (data) + "\nStatus: " + status);
         document.getElementById("userform").reset();
         $('#userModal').modal('toggle');
         $('#errormodal').modal();
@@ -54,7 +34,6 @@ $('document').ready(function() {
       $.post( "includes/users/user_delete.php" ,
             { uname: $('#uname').val() },
             function(data, status){
-             // alert("Data: " + (data) + "\nStatus: " + status);
              document.getElementById("userform").reset();
              $('#userModal').modal('toggle');
              $('#errormodal').modal();

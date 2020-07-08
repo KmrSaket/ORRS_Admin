@@ -1,12 +1,4 @@
 $(document).ready(function() {
-  // $("#loginBtn").click(function(){
-  //   var emptUname = document.forms["loginform"]["admin_uname"].value;
-  //   var emptPassword = document.forms["loginform"]["admin_password"].value;
-  //   if (emptUname == "" || emptPassword == ""){
-  //     document.getElementById("errormsg").innerHTML="Please fill all the fields";
-  //     $("#loginErrorModal").modal();
-  //   }
-  // });
 
   const queryString=window.location.search;
   const urlParams= new URLSearchParams(queryString);

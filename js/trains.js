@@ -1,26 +1,5 @@
 $('document').ready(function() {
 
-
-
-
-  // insert train form validation
-      //train number
-      // var tnumber = document.getElementById('insertTrainNumber');
-      //     tnumber.oninvalid = function(event) {
-      //     event.target.setCustomValidity('5 digit train number!');
-      //     }
-      //     tnumber.oninput = function(event) {
-      //     event.target.setCustomValidity('');
-      //     }
-
-
-
-
-
-
-
-
-
     //ajax call for fetching trains list
     $.ajax({
       url: 'includes/trains/trains_fetch.php',
@@ -107,11 +86,9 @@ $('document').ready(function() {
         days=days+"0"
       }
 
-
-
-
-
       // converting running days from checkbox to string (end)
+
+
 
 
 
@@ -119,7 +96,6 @@ $('document').ready(function() {
       $.post( "includes/trains/train_insert.php" ,
               { tnumber: $('#insertTrainNumber').val(), tname: $('#insertTrainName').val(), source: $('#insertTrainsource').val(), destination: $('#insertTraindestination').val(), runningDays: days , destination: $('#insertTraindestination').val(), runningDays: days, fare: $('#insertTrainfare').val(), distance: $('#insertTraindistance').val()} ,
               function(data, status){
-               // alert("Data: " + (data) + "\nStatus: " + status);
                document.getElementById("trainform").reset();
                $('#insertTrainModal').modal('toggle');
                $('#errormodal').modal();
@@ -203,7 +179,6 @@ $('document').ready(function() {
             else {
               updatedays=updatedays+"0"
             }
-            //console.log(updatedays);
             // converting running days from checkbox to string (end)
 
 
@@ -211,7 +186,6 @@ $('document').ready(function() {
             // run different ajax for different combinations of input
 
             if($('#updatedestination').val().trim().length==0  &&  $('#updatesource').val().trim().length==0){
-              // console.log($('#updatesource').attr('placeholder'));
               $.post( "includes/trains/train_update.php" ,
                       { tnumber: $('#tnumber').val(), tname: $('#tname').val(), source: $('#updatesource').attr('placeholder'), destination: $('#updatedestination').attr('placeholder'), runningDays: updatedays } ,
                     function(data,success) {
@@ -248,7 +222,6 @@ $('document').ready(function() {
     });
 
     function functionName(data,success) {
-      // alert(data +success);
       document.getElementById("updateTrainForm").reset();
       $('#trainModal').modal('toggle');
       $('#errormodal').modal();
@@ -269,7 +242,6 @@ $('document').ready(function() {
       $.post( "includes/trains/train_delete.php" ,
             { tnumber: $('#tnumber').val() } ,
             function(data) {
-              // alert("Data: " + (data) + "\nStatus: " + status);
               $('#trainModal').modal('toggle');
               $('#errormodal').modal();
               $('#error').text(data);
@@ -290,7 +262,6 @@ $('document').ready(function() {
          var source=currentRow.find("td:eq(2)").text().trim();
          var destination=currentRow.find("td:eq(3)").text().trim();
          var rdays=currentRow.find("td:eq(5)").text().trim();
-         // console.log(rdays[2]);
          // setting values of inputs in form of modal
          document.getElementById("tnumber").value=tno;
          document.getElementById("tname").value=tname;
@@ -348,8 +319,6 @@ $('document').ready(function() {
          else {
            updateSaday.checked = false;
          }
-         // $('#runningDays').attr('placeholder', rdays);
-         // launch modal
          $("#trainModal").modal();
     });
 

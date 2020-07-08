@@ -19,7 +19,6 @@
 			else{
 				//execute sql
 				mysqli_stmt_bind_param($stmt,"s",$uname);
-				// mysqli_stmt_execute($stmt);
 				if (mysqli_stmt_execute($stmt)) {
 					echo "Train Deleted Successfully!";
 				}

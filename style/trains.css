@@ -25,7 +25,6 @@ tr{
 
 
 .running{
-  /* max-width: 120px; */
   display: flex;
   flex-wrap:wrap;
 }

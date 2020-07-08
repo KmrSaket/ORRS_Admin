@@ -34,7 +34,7 @@
 			}
 			else{
 				//execute sql
-        // echo "success";
+        
 					mysqli_stmt_bind_param($stmt,"isssiii",$tnumber,$tname,$source,$destination,$runningDays,$fare,$distance);
 		 		 	if (mysqli_stmt_execute($stmt)) {
 		 		 		echo "Train inserted Successfully!";

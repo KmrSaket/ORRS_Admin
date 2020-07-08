@@ -8,21 +8,16 @@
 		$phone 	= $_POST['phone'];
  		$hashedPwd = password_hash($password,PASSWORD_DEFAULT);	//hasing the password
 
-// && gettype($phone)=="integer"
-
 
 		// different sql statements depending on different cases
 		if (!empty($password) && !empty($phone) && $phone[0]!=0 && strlen($phone)==10 && is_numeric($phone)) {
 		 $sql = "UPDATE passenger SET password = ? , phone = ? WHERE user_name = ?";
-		 // echo "Both password and phone updated Successfully!";
 	 	}
 		elseif (!empty($phone) && $phone[0]!=0 && strlen($phone)==10 && is_numeric($phone)) {
 		  $sql = "UPDATE passenger SET phone = ? WHERE user_name = ?";
-			// echo "User Phone number updated Successfully!";
 		}
 		elseif (!empty($password)){
 		  $sql = "UPDATE passenger SET password = ? WHERE user_name = ?";
-			// echo "User Password updated Successfully!";
 		}
 		else {
 			echo "An Error occured! Please check your input and try again!";

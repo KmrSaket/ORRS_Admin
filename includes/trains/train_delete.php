@@ -7,7 +7,7 @@
 		$tnumber	= $_POST['tnumber'];
 
 
-		$sql = "DELETE FROM train WHERE train_no = ?;";  //sql to delete data of uesr
+		$sql = "DELETE FROM train WHERE train_no = ?;";  //sql to delete data of train
 		$stmt=mysqli_stmt_init($conn);
 
 			//check if sql connection is created

@@ -41,62 +41,6 @@
 						<li class="nav-item">
 							<a class="nav-link" href="trains.php"><button class="nav_btn" >Trains	</button></a>
 						</li>
-
-						<!-- dummy navs starts-->
-
-
-						<!-- <li class="nav-item">
-							<a class="nav-link" href="users.php"><button class="nav_btn" >dummy</button></a>
-						</li> -->
-
-
-
-						<!-- dummy navs ends-->
-
-
-
-
-
-						<!-- for hoverable drop down menu (start) -->
-
-						<!-- <li class="nav-item mr-5">
-							<div class="dropdown">
-			        	<button class="dropbtn" id="dropdownMenu1" href="#">Users</button>
-								<div class="dropdown-content">
-										<a href="admin_functionality/users/link1.php" style="color:black; text-decoration:none; ">Link 1</a>
-										<a href="admin_functionality/users/link2.php" style="color:black; text-decoration:none;">Link 2</a>
-										<a href="admin_functionality/users/link3.php" style="color:black; text-decoration:none;">Link 3</a>
-									</div>
-								</div>
-			      </li> -->
-
-						<!-- <li class="nav-item mr-5">
-							<div class="dropdown">
-			        	<button class="dropbtn" id="dropdownMenu2" href="#">Trains</button>
-								<div class="dropdown-content">
-										<a href="admin_functionality/trains/link1.php" style="color:black; text-decoration:none; ">Link 1</a>
-										<a href="admin_functionality/trains/link2.php" style="color:black; text-decoration:none;">Link 2</a>
-										<a href="admin_functionality/trains/link3.php" style="color:black; text-decoration:none;">Link 3</a>
-									</div>
-								</div>
-			      </li> -->
-
-						<!-- <li class="nav-item mr-5">
-							<div class="dropdown">
-			        	<button class="dropbtn" id="dropdownMenu3" href="#">Fare</button>
-								<div class="dropdown-content">
-										<a href="admin_functionality/fare/link1.php" style="color:black; text-decoration:none; ">Link 1</a>
-										<a href="admin_functionality/fare/link2.php" style="color:black; text-decoration:none;">Link 2</a>
-										<a href="admin_functionality/fare/link3.php" style="color:black; text-decoration:none;">Link 3</a>
-									</div>
-								</div>
-			      </li> -->
-
-							<!-- for hoverable drop down menu (ends) -->
-
-
-
-
 			    </ul>
 			      <a class="btn btn-outline-danger my-2 my-sm-0" type="button" name="logout" id="logoutbtn" href="includes/admin_logout_inc.php">Logout</a>
 			  </div>
