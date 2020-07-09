@@ -20,7 +20,7 @@
 				//execute sql
 				mysqli_stmt_bind_param($stmt,"s",$uname);
 				if (mysqli_stmt_execute($stmt)) {
-					echo "Train Deleted Successfully!";
+					echo "User Unregistered Successfully!";
 				}
 		}
 
