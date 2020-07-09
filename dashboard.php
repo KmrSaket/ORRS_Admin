@@ -60,7 +60,8 @@
 
 
 			<div class="container">
-				<p style="margin-top:10vh">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p style="margin-top:10vh">Online railway reservation system(ORRS) is a small initiative from us in order to make people's life a bit simpler by enabling them to stay home and book a railway ticket for any place they wish to visit. It got all the basic functionalities that a railway reservation system should have. One can sign up into the portal just by providing few basic credentials. Once the user gets to login he/she can choose the source, destination and date for booking.
+After a successful login a user gets many functionalities in our portal such as view transactions, chick PNR etc. Whereas, the admin here gets to perform certain different functionalities such as viewing all the users that have logged in into the portal, update/delete user's profile, add/update train etc.This system is basically concerned with the reservation and cancellation of railway tickets to the passenger. The need of this system arouse because as is the known fact that India has the largest railway network in the whole world and it is not posible to handle such a large system manually. By computerizing it, it became possible to overcome the limitations make the system operatioms more efficient.</p>
 			</div>
 
 

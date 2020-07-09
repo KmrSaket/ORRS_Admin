@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 07, 2020 at 09:57 AM
+-- Generation Time: Jul 09, 2020 at 08:04 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -62,14 +62,18 @@ CREATE TABLE IF NOT EXISTS `passenger` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_name` (`user_name`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `passenger`
 --
 
 INSERT INTO `passenger` (`user_id`, `user_name`, `fname`, `lname`, `email`, `password`, `phone`) VALUES
-(3, 'qw', 'Jhon', 'Doe', 'asdfghjk@gmail.com', '$2y$10$xrRrKG5/OO7NmTQgaEqrZOOD.Dya69QhP5djbbpZKa0zkuVBDIQK.', '7050890061');
+(18, 'Saketkr', 'Saket', 'Kumar', 'saketkumark@gmail.com', '$2y$10$xrRrKG5/OO7NmTQgaEqrZOOD.Dya69QhP5djbbpZKa0zkuVBDIQK.', '7050890061'),
+(19, 'Rishavraj', 'Rishav', 'Raj', 'rishavraj@gmail.com', '$2y$10$z4gn6Qp4ND6N4nbNM/4VNO969CrO6NZiaUTJDYiWKlQB0ah54IWJS', '9517534652'),
+(20, 'Shalinikumari', 'Shalini', 'Kumari', 'shalinikumari@gmail.com', '$2y$10$fI237NgRov3wreBXIL.Ulu/VycOxzlfpnjZpLd6S2nyCQF0Dcirtm', '7539518520'),
+(21, 'Shradhapraveen', 'Shradha', 'Praveen', 'shradhapraveen@gmail.com', '$2y$10$E9pnDyVTsDBJIWesIRcRbOW.pdsqDV/21O/IBDBjhrgyXF7Q8cKQ2', '7894561230'),
+(22, 'Sujatakumari', 'Sujata', 'Kumari', 'sujatakumari@gmail.com', '$2y$10$u3SncJFTev5i02Qa6O.E5uSmgAzWUk1gVIyieeyWqwDHyghOEfDs.', '7391824650');
 
 -- --------------------------------------------------------
 
@@ -92,14 +96,22 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   `p2_gender` varchar(6) DEFAULT NULL,
   PRIMARY KEY (`pnr`),
   KEY `user_name` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1643597434 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1643597447 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ticket`
 --
 
 INSERT INTO `ticket` (`user_name`, `pnr`, `source_st`, `destination_st`, `dateOfBooking`, `p1_name`, `p1_age`, `p1_gender`, `p2_name`, `p2_age`, `p2_gender`) VALUES
-('qw', 1643597433, 'Dibrugarh', 'New Delhi', '2020-07-17', 'abcd', 12, 'Male', '', 0, 'Male');
+('Saketkr', 1643597438, 'Agartala', 'Anand Vihar Terminal', '2020-07-27', 'Saket Kumar', 22, 'Male', '', 0, 'Male'),
+('Rishavraj', 1643597439, 'Bilaspur Jn', 'New Delhi', '2020-07-23', 'Rishav Raj', 22, 'Male', '', 0, 'Male'),
+('Rishavraj', 1643597440, 'Bhubaneswar', 'New Delhi', '2020-08-22', 'Shradha Praveen', 21, 'Female', 'Rishav Raj', 22, 'Male'),
+('Shradhapraveen', 1643597441, 'Hazrat Nizamuddin', 'C Shivaji Maharaj T', '2020-09-12', 'Shradha Praveen', 21, 'Female', '', 0, 'Male'),
+('Shradhapraveen', 1643597442, 'C Shivaji Maharaj T', 'Hazrat Nizamuddin', '2020-09-12', 'Rishav Raj', 22, 'Male', 'Shradha Praveen', 21, 'Female'),
+('Shalinikumari', 1643597443, 'Hazrat Nizamuddin', 'Ksr Bengaluru', '2020-07-29', 'Shalini Kumari', 22, 'Female', '', 0, 'Male'),
+('Shalinikumari', 1643597444, 'Dibrugarh', 'New Delhi', '2020-08-27', 'Sujata Kumari', 22, 'Female', 'Shalini Kumari', 22, 'Female'),
+('Sujatakumari', 1643597445, 'Agartala', 'Anand Vihar Terminal', '2020-09-14', 'Sujata Kumari', 22, 'Female', '', 0, 'Male'),
+('Sujatakumari', 1643597446, 'C Shivaji Maharaj T', 'Hazrat Nizamuddin', '2020-11-27', 'Shalini Kumari', 22, 'Female', 'Sujata Kumari', 22, 'Female');
 
 -- --------------------------------------------------------
 
